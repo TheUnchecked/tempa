@@ -210,3 +210,66 @@ code, pre {
 
 [data-theme="dark"] .theme-toggle .icon-sun  { display: inline; }
 [data-theme="dark"] .theme-toggle .icon-moon { display: none; }
+
+/* ============================================
+   1. BURGER SEMPRE VISIBILE (anche desktop)
+   ============================================ */
+.navbar-expand-xl .navbar-toggler {
+  display: flex !important;
+}
+
+@media (min-width: 1200px) {
+  .navbar-expand-xl > .navbar-collapse {
+    display: none !important;
+    flex-basis: 100%;
+  }
+
+  .navbar-expand-xl > .navbar-collapse.show,
+  .navbar-expand-xl > .navbar-collapse.collapsing {
+    display: block !important;
+  }
+}
+
+/* ============================================
+   2. DARK MODE — burger e navbar bianchi
+   ============================================ */
+
+/* Icona burger bianca */
+[data-theme="dark"] .navbar-toggler-icon {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(255,255,255,0.9)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important;
+}
+
+/* Bordo burger */
+[data-theme="dark"] .navbar-toggler {
+  border-color: rgba(255, 255, 255, 0.25);
+}
+
+/* Brand (titolo) bianco */
+[data-theme="dark"] .navbar-brand {
+  color: #e8e8e8 !important;
+}
+
+/* Link navbar bianchi */
+[data-theme="dark"] .navbar-nav .nav-link,
+[data-theme="dark"] .navbar-default .navbar-nav > li > a {
+  color: #d0d0d0 !important;
+}
+
+[data-theme="dark"] .navbar-nav .nav-link:hover {
+  color: #ffffff !important;
+}
+
+/* Dropdown dark */
+[data-theme="dark"] .dropdown-menu {
+  background-color: #1a1a1a;
+  border-color: #333333;
+}
+
+[data-theme="dark"] .dropdown-item {
+  color: #d0d0d0;
+}
+
+[data-theme="dark"] .dropdown-item:hover {
+  background-color: #222222;
+  color: #ffffff;
+}
