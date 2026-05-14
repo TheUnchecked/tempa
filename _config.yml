@@ -2,6 +2,9 @@
 title: Corrente
 description: Pensieri in movimento continuo.
 
+site-css:
+  - "/assets/css/custom.css"
+
 # Tua presentazione breve (appare sotto il titolo)
 author: Dino
 
