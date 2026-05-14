@@ -5,6 +5,9 @@ description: Pensieri in movimento continuo.
 site-css:
   - "/assets/css/custom.css"
 
+site-js:
+  - "/assets/js/theme-toggle.js"
+
 # Tua presentazione breve (appare sotto il titolo)
 author: Dino
 
