@@ -1,0 +1,122 @@
+/* ============================================
+   CORRENTE — Custom CSS
+   Tema: minimale, bianco, tipografico
+   ============================================ */
+
+/* === FONT === */
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;600;700&display=swap');
+
+body {
+  font-family: 'Source Sans Pro', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 18px;
+  line-height: 1.75;
+  color: #2d2d2d;
+}
+
+/* === TITOLI === */
+h1, h2, h3, h4 {
+  font-weight: 600;
+  color: #1a1a1a;
+  letter-spacing: -0.02em;
+}
+
+h1 { font-size: 2rem; }
+h2 { font-size: 1.5rem; }
+h3 { font-size: 1.25rem; }
+
+/* === LINK === */
+a {
+  color: #606060;
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.2s ease;
+}
+
+a:hover {
+  color: #000000;
+  border-bottom-color: #000000;
+}
+
+/* === NAVBAR === */
+.navbar {
+  font-size: 0.9rem;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  border-bottom: 1px solid #f0f0f0 !important;
+  box-shadow: none !important;
+}
+
+.navbar-brand {
+  font-weight: 700;
+  letter-spacing: 0.05em;
+}
+
+/* === POST LIST (homepage) === */
+.post-preview {
+  border-bottom: 1px solid #f0f0f0;
+  padding-bottom: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.post-title {
+  font-weight: 600;
+  font-size: 1.4rem;
+}
+
+.post-subtitle,
+.post-meta {
+  color: #888888;
+  font-size: 0.9rem;
+}
+
+/* === CONTENUTO POST === */
+.blog-post {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+article p {
+  margin-bottom: 1.3rem;
+}
+
+blockquote {
+  border-left: 3px solid #e0e0e0;
+  padding-left: 1.2rem;
+  color: #666666;
+  font-style: italic;
+  margin: 1.5rem 0;
+}
+
+/* === FOOTER === */
+.footer {
+  border-top: 1px solid #f0f0f0;
+  font-size: 0.85rem;
+}
+
+/* === BOTTONI / PAGINAZIONE === */
+.btn-default {
+  background-color: #ffffff;
+  color: #2d2d2d;
+  border: 1px solid #d0d0d0;
+  border-radius: 2px;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  transition: all 0.2s ease;
+}
+
+.btn-default:hover {
+  background-color: #1a1a1a;
+  color: #ffffff;
+  border-color: #1a1a1a;
+}
+
+/* === SPAZIATURA GENERALE === */
+.container {
+  max-width: 800px;
+}
+
+/* === SCROLLBAR MINIMALE (webkit) === */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: #ffffff; }
+::-webkit-scrollbar-thumb { background: #d0d0d0; border-radius: 3px; }
