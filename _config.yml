@@ -1,39 +1,74 @@
-# URL — OBBLIGATORI per un project site
+# ============================================
+# TEMPA — Pensieri controvento
+# _config.yml
+# ============================================
+
+# --- URL (obbligatori per GitHub Pages project site) ---
 url: "https://theunchecked.github.io"
 baseurl: "/pensieri"
 
-# Informazioni principali
-title: Corrente
-description: Pensieri in movimento continuo.
+# --- Informazioni principali ---
+title: Tempa
+description: "Pensieri controvento."
+author: Dino
 
+# --- Navbar ---
+navbar-links:
+  About: "aboutme"
+
+# --- CSS e JS custom ---
 site-css:
   - "/assets/css/custom.css"
 
 site-js:
   - "/assets/js/theme-toggle.js"
 
-# Tua presentazione breve (appare sotto il titolo)
-author: Dino
-
-# Link social (lascia vuoto quello che non usi)
+# --- Social (togli il # e scrivi il tuo username per attivare) ---
 social-networks:
-  GitHub: tuousername
-  LinkedIn: tuousername
-  Instagram: tuousername
+  # github: TheUnchecked
+  # linkedin: tuousername
+  # instagram: tuousername
 
-# Aspetto
+# --- Colori (tema light — il dark è gestito dal CSS) ---
 navbar-col: "#ffffff"
 navbar-text-col: "#404040"
 navbar-border-col: "#f0f0f0"
 footer-col: "#ffffff"
 footer-text-col: "#888888"
+footer-link-col: "#606060"
+footer-hover-col: "#000000"
 page-col: "#ffffff"
 text-col: "#2d2d2d"
 link-col: "#606060"
 hover-col: "#000000"
 
-# Immagine di copertina homepage (opzionale)
+# --- Avatar (togli il # per attivare) ---
 # avatar: "/assets/img/foto.jpg"
 
-# Paginazione
+# --- Paginazione ---
 paginate: 8
+
+# --- Post ---
+post_search: false
+share-links-active:
+  twitter: false
+  facebook: false
+  linkedin: false
+
+# --- Impostazioni avanzate (non toccare) ---
+markdown: kramdown
+highlighter: rouge
+permalink: /:year-:month-:day-:title/
+kramdown:
+  input: GFM
+
+plugins:
+  - jekyll-paginate
+  - jekyll-sitemap
+
+exclude:
+  - README.md
+  - LICENSE
+  - CNAME
+  - Gemfile
+  - Gemfile.lock
