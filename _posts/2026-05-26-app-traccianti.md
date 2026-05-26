@@ -1,12 +1,3 @@
----
-
-layout: post title: "Titolo dell'articolo" subtitle: "Sottotitolo — una frase che completa il titolo" tags: [tag1, tag2, tag3]
-
-# cover-img: "/assets/img/nome-immagine.jpg"
-
-# thumbnail-img: "/assets/img/nome-immagine.jpg"
-
----
 
 <!-- TEMPLATE CON COMPONENTI VISIVI ================================ Usa questo template per articoli che contengono: - dati e statistiche - sequenze di eventi o passi - confronti tra elementi - concetti da evidenziare con forza Cancella i commenti prima di pubblicare. -->
 
