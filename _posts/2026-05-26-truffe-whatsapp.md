@@ -1,155 +1,97 @@
 ---
 layout: post
-title: "Caro genitore, nonno amico, NON aprire le mail!"
-subtitle: "Dietro ogni email si può nascondere una truffa"
-tags: [sicurezza digitale, truffe, phishing, società]
-# cover-img: "/assets/img/.jpg"
-# share-img: "/assets/img/.jpg"
-# thumbnail-img: "/assets/img/.jpg"
+title: "Caro genitore, nonno amico, NON rispondere a quel messaggio WhatsApp!"
+subtitle: "Le truffe si sono spostate sullo smartphone. Ecco come riconoscerle."
+tags: [sicurezza digitale, truffe, whatsapp, società]
 ---
 
-Un mail truffa ha sempre un travestimento che la fa sembrare quella di una banca, la tua, delle poste o dell'Agenzia delle Entrate.
+Se hai letto il mio articolo su [come riconoscere una mail truffa](/2026-05-16-mail-truffa), sai già che i truffatori sono organizzati, professionali e inarrestabili.
 
-Non devi fidarti a prescindere, e qui proverò a spiegarti in modo semplice come capire subito se una mail è legittima o meno.
+Ma c'è una novità: si sono spostati su WhatsApp.
 
-#Ma la REGOLA N° è DI non aprire mai una mail sospetta da smartphone, MAI!!!!
+E lì è ancora più pericoloso. Perché WhatsApp lo usiamo per parlare con i nostri figli, i nipoti, gli amici di una vita. È uno spazio che sentiamo *nostro*, *sicuro*, *privato*. Ed è esattamente per questo che funziona così bene come trappola.
 
 ---
 
-Le truffe via email non sono il lavoro solitario di qualche hacker in cantina. Sono industrie organizzate, scalabili e redditizie.
+## Il messaggio che arriva sempre di domenica sera.
 
-Comprano banche dati di indirizzi email. Noleggiano server in paesi dove nessuno li raggiunge. Copiano loghi, colori e layout delle aziende più grandi. Usano sistemi automatici per mandare #milioni di messaggi al giorno.
+"Ciao mamma, mi si è rotto il telefono. Questo è il mio nuovo numero. Puoi mandarmi 200 euro? Ti restituisco lunedì."
 
+Sembra tuo figlio. Scrive come lui. Sa che sei sua madre. Sa il tuo nome.
 
-Prendo uan delle tante mail ricevute nella mia casella di posta, quella in cui fingeva di essere DHL, #ATTENZIONE ti sto facendo vedere una mail facile, ma RICORDA che i truffatori sanno quando ti deve arrivare un pacco e potrebbe coincidere e quindi farti cadere nella trappola.
+Non è tuo figlio.
 
-P.S.: Ci sono altri metodi per capire se una mail è vera o meno, ma devo dire che mi fido più del semplice controllo manuale.
-
-
-
-L'esempio è condotto sul cliente più utilizzato GMAIL
-
-```
-From:        "DHL" (nome copiato, indirizzo falso)
-Return-Path: return100189@eoj53x09ubi1drs.bf38d04.huaweii.com.tw
-Server:      progresshartford.com [IP tedesco, hosting anonimo]
-DKIM:        assente
-Link:        storage.googleapis.com/barriom/fantomee.html
-Testo:       migliaia di caratteri random nascosti per aggirare i filtri
-```
-
-Sei livelli di inganno sovrapposti. Tutto progettato per sembrare reale a chi non sa dove guardare.
-
-Su questo non ci sono scuse. È frode. È reato. È fatto con piena consapevolezza del danno che causa.
+È una truffa che in Italia si chiama **"Hi Mum"** — e ha fruttato milioni di euro negli ultimi due anni. Funziona perché fa leva sulla cosa più potente che esiste: l'istinto di un genitore di aiutare il proprio figlio.
 
 ---
 
-## Adesso arriva la domanda che nessuno vuole sentire.
+## Come funziona tecnicamente.
 
-Chi ha insegnato a tua madre come funziona una mail?
+I truffatori comprano elenchi di numeri di telefono. Mandano lo stesso messaggio a migliaia di persone contemporaneamente. Aspettano chi risponde. Da quel momento inizia la conversazione — gestita da una persona reale, o sempre più spesso da un sistema automatico.
 
-Chi le ha spiegato che il nome del mittente non significa niente — che chiunque può scrivere "Intesa Sanpaolo" nel campo del nome e mandare la mail da un server in Russia? Chi le ha detto che un logo non è una garanzia? Che il lucchetto verde nella barra del browser non vuol dire niente su chi ti sta scrivendo?
+Sanno che non devono convincere tutti. Basta convincere qualcuno.
 
-Nessuno. Perché diamo per scontato che queste cose si sappiano. Non si sanno.
+Le varianti più comuni:
 
-E nel frattempo i truffatori lo sanno benissimo che non si sanno.
+**Il figlio in difficoltà** — "Nuovo numero, vecchio rotto, ho urgenza di soldi."
 
----
+**Il pacco bloccato** — Un messaggio che sembra di DHL o Poste con un link per "sbloccare la consegna" pagando 2 euro. Il link porta a una pagina falsa che ruba i dati della carta.
 
-## Il problema con l'indignazione che non cambia niente.
+**Il concorso vinto** — "Hai vinto un premio! Clicca qui per ritirarlo." Il link installa un software che legge i messaggi e i dati bancari.
 
-Ogni volta che esce una notizia sulle truffe online la reazione è sempre uguale. Articoli. Indignazione. Qualcuno che condivide. Qualcuno che commenta "vergogna". E poi tutto torna come prima.
-
-Perché è più comodo indignarsi con i cattivi che fare la cosa difficile: sedersi vicino a un genitore anziano e spiegargli, con pazienza, come funziona davvero quello strumento che usa ogni giorno senza capirlo fino in fondo.
-
-<div class="stat-row">
-  <div class="stat-card">
-    <div class="stat-number">3,4 Mld€</div>
-    <div class="stat-label">Persi dagli italiani in truffe online nel 2024</div>
-  </div>
-  <div class="stat-card">
-    <div class="stat-number">+34%</div>
-    <div class="stat-label">Aumento delle truffe via email in due anni</div>
-  </div>
-  <div class="stat-card">
-    <div class="stat-number">Over 60</div>
-    <div class="stat-label">La fascia d'età più colpita in Italia</div>
-  </div>
-</div>
-
-Le vittime principali sono gli anziani. Non perché siano stupidi. Ma perché hanno imparato a fidarsi delle istituzioni in un'epoca in cui le istituzioni comunicavano su carta, con firma e timbro. Nessuno gli ha mai detto che su internet chiunque può fingere di essere chiunque.
-
-Quella lacuna non la colma nessuna multa a nessuna azienda. La colmiamo noi, se vogliamo.
+**L'assistenza tecnica** — "Il tuo account WhatsApp scade oggi. Verifica qui." WhatsApp non manda mai messaggi di questo tipo.
 
 ---
 
-## Quello che si può fare davvero.
+## Tre segnali che non si possono nascondere.
 
-Tre segnali che una mail falsa non riesce quasi mai a nascondere. Non servono competenze tecniche. Servono due minuti e la voglia di guardare.
+Come per le [mail truffa](/2026-05-16-mail-truffa), anche su WhatsApp ci sono segnali che i truffatori non riescono a eliminare del tutto.
 
-**Primo: l'indirizzo del mittente, non il nome.** Il nome visualizzato è decorativo. Chiunque può scrivere "La tua banca" come nome. L'indirizzo vero — quello tra le parentesi angolari — è la cosa che conta. Se finisce con qualcosa di diverso dal dominio ufficiale dell'azienda, è falso.
+**Primo: il numero è sconosciuto.** Tuo figlio ha già il tuo numero. Se ti scrive da un numero nuovo, la prima cosa da fare è chiamare il vecchio numero. Non rispondere al messaggio — chiama.
 
-**Secondo: l'urgenza è sempre un segnale.** "Il tuo account verrà sospeso entro 24 ore." "Azione richiesta immediatamente." "Il tuo pacco verrà rispedito oggi." Le aziende vere non comunicano così. L'urgenza è uno strumento di manipolazione. Funziona perché mette in cortocircuito il ragionamento.
+**Secondo: c'è sempre urgenza e sempre denaro.** "Ho bisogno subito." "Non posso aspettare." "Non chiamare, sono in riunione." L'urgenza serve a bloccare il ragionamento. Una persona reale in difficoltà capisce se dici "ti richiamo tra dieci minuti".
 
-**Terzo: nessuna azienda seria chiede dati via email.** Mai. La tua banca non ti chiede la password via mail. Poste Italiane non ti chiede il codice fiscale via mail. Amazon non ti chiede i dati della carta via mail. Se lo fa, non è la tua banca. Non è Poste. Non è Amazon.
-
-> Se hai un dubbio, chiudi la mail. Apri il browser. Cerca il sito ufficiale su Google. Accedi da lì. Il dubbio si risolve in trenta secondi e non rischi niente.
-
-Per chi vuole andare più a fondo esiste il sorgente della mail — la sua carta d'identità tecnica. Su Gmail si apre con tre clic: tre puntini in alto → *Mostra originale*. Contiene informazioni che non si possono falsificare.
-
-La mail DHL sembrava ufficiale. Logo, colori, codice di tracciamento. Ma il sorgente mostrava questo:
-
-```
-Authentication-Results:
-  spf=pass   → ma su un dominio taiwanese casuale, non su dhl.com
-  dkim=ASSENTE
-  dmarc=ASSENTE
-
-Return-Path: return100189@[57 caratteri di nonsense].huaweii.com.tw
-Link:        storage.googleapis.com/barriom/fantomee.html
-```
-
-Una mail legittima, invece, mostra tutt'altro:
-
-```
-Authentication-Results:
-  dkim=pass   ✓
-  spf=pass    ✓
-  dmarc=pass  ✓  (p=REJECT — il massimo della protezione)
-
-Return-Path: stessa-azienda@dominiolegittimo.it
-Server:      sottodominio riconducibile all'azienda mittente
-```
-
-Il contrasto è netto. Leggibile da chiunque, una volta che sa cosa cercare.
+**Terzo: ti chiedono di non verificare.** "Non usare il vecchio numero, non funziona." "Non dirlo a papà, lo gestisco io." Chiunque ti chieda di non verificare la sua identità ha un motivo per farlo.
 
 ---
 
-## Le truffe non si fermano alla mail.
+## La regola che salva tutto.
 
-La mail è solo uno dei canali. Gli stessi truffatori usano anche WhatsApp, SMS, e telefonate. Se vuoi capire come funzionano le [truffe via WhatsApp](/2026-05-26-truffe-whatsapp) — sempre più diffuse e sempre più convincenti — ho scritto una guida anche su quello.
+Prima di mandare qualsiasi somma di denaro, anche piccola, anche a qualcuno che sembra tuo figlio:
 
-Il meccanismo è lo stesso. Cambiano solo gli strumenti.
+> Chiudi WhatsApp. Chiama il numero che conosci da sempre. Senti la voce. Poi decidi.
+
+Trenta secondi. Zero rischi.
 
 ---
 
-## La domanda che mi faccio.
+## Se hai già risposto.
 
-Non è quante truffe vengono denunciate. Non è quante leggi vengono approvate.
+Non è colpa tua. Queste truffe sono costruite da professionisti per ingannare persone normali.
 
-È quanti di noi, dopo aver letto questa storia, questa settimana si siedono vicino a un genitore o a un nonno e gli mostrano — concretamente, sul loro telefono — come riconoscere una mail falsa.
+Cosa fare subito:
 
-Mia madre usa lo smartphone da sola.
+1. **Non mandare altri soldi** — anche se ti convincono che "serve ancora un po'"
+2. **Blocca il numero**
+3. **Segnala a WhatsApp** — tre puntini → Segnala
+4. **Chiama il tuo figlio vero** — per avvisarlo che qualcuno sta usando la sua identità
+5. **Denuncia alla Polizia Postale** — [www.commissariatops.it](https://www.commissariatops.it)
 
-So cosa sa distinguere?
+---
 
-**Quella domanda vale più di qualsiasi campagna di sensibilizzazione.**
+## La domanda che vale anche qui.
+
+Nel mio articolo sulle [mail truffa](/2026-05-16-mail-truffa) ho chiesto quanti di noi si siedono vicino a un genitore e gli mostrano come riconoscere una mail falsa.
+
+Vale lo stesso per WhatsApp.
+
+Mostragli questo articolo. Fategli fare una prova: "Se ti arriva un messaggio così, cosa fai?" Non serve una lezione. Basta una conversazione.
 
 ---
 
 ## Fonti
 
-- **Dati sulle truffe in Italia** — Polizia Postale, Rapporto Cybercrime 2024
-- **Come leggere il sorgente di una mail** — [Google Support](https://support.google.com/mail/answer/29436)
-- **Autenticazione email: SPF, DKIM, DMARC** — [Cloudflare Learning Center](https://www.cloudflare.com/it-it/learning/email-security/dmarc-dkim-spf/)
-- **Analisi tecnica** — Esempi reali analizzati nel corso della ricerca per questo articolo
+- **Polizia Postale** — Rapporto Cybercrime 2024
+- **Europol** — *Hi Mum scam* report 2023
+- **WhatsApp Safety Center** — [faq.whatsapp.com](https://faq.whatsapp.com/it/)
+- **Commissariato di PS Online** — [commissariatops.it](https://www.commissariatops.it)
