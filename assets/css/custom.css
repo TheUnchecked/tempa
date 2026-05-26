@@ -333,3 +333,337 @@ code, pre {
   color: #999999;
   line-height: 1.4;
 }
+/* ============================================================
+   TEMPA — Componenti visivi per gli articoli
+   Da aggiungere in fondo a assets/css/custom.css
+   ============================================================ */
+
+
+/* ── STAT CARDS ─────────────────────────────────────────────
+   Uso nel .md:
+   <div class="stat-row">
+     <div class="stat-card accent-red">
+       <div class="stat-number">3,4 Mld€</div>
+       <div class="stat-label">Persi in truffe nel 2024</div>
+     </div>
+   </div>
+   Varianti colore: accent-red | accent-amber | accent-teal | (nessuna = grigio)
+   ──────────────────────────────────────────────────────────── */
+
+.stat-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 12px;
+  margin: 1.5rem 0;
+}
+
+.stat-card {
+  background: #f5f5f5;
+  border-radius: 12px;
+  padding: 1.25rem 1rem;
+  text-align: center;
+}
+
+.stat-number {
+  font-size: 2rem;
+  font-weight: 600;
+  color: #2d2d2d;
+  line-height: 1;
+}
+
+.stat-label {
+  font-size: 12px;
+  color: #888;
+  margin-top: 6px;
+  line-height: 1.4;
+}
+
+.stat-card.accent-red   .stat-number { color: #a32d2d; }
+.stat-card.accent-amber .stat-number { color: #854f0b; }
+.stat-card.accent-teal  .stat-number { color: #0f6e56; }
+.stat-card.accent-blue  .stat-number { color: #185fa5; }
+
+/* Dark mode */
+@media (prefers-color-scheme: dark) {
+  .stat-card { background: #2a2a2a; }
+  .stat-number { color: #e8e8e8; }
+  .stat-label  { color: #888; }
+}
+
+
+/* ── CALLOUT BOX ─────────────────────────────────────────────
+   Uso nel .md:
+   <div class="callout danger">
+     <strong>Attenzione</strong>
+     Il testo del callout va qui.
+   </div>
+   Varianti: danger | warning | info | success
+   ──────────────────────────────────────────────────────────── */
+
+.callout {
+  border-radius: 0 8px 8px 0;
+  border-left: 3px solid;
+  padding: 0.9rem 1.1rem;
+  margin: 1.25rem 0;
+  font-size: 0.92rem;
+  line-height: 1.6;
+}
+
+.callout strong {
+  display: block;
+  margin-bottom: 2px;
+  font-weight: 600;
+}
+
+.callout.danger  { background: #fcebeb; border-color: #e24b4a; color: #501313; }
+.callout.warning { background: #faeeda; border-color: #ef9f27; color: #412402; }
+.callout.info    { background: #e6f1fb; border-color: #378add; color: #042c53; }
+.callout.success { background: #eaf3de; border-color: #639922; color: #173404; }
+
+@media (prefers-color-scheme: dark) {
+  .callout.danger  { background: #2e1515; border-color: #e24b4a; color: #f7c1c1; }
+  .callout.warning { background: #2e2210; border-color: #ef9f27; color: #fac775; }
+  .callout.info    { background: #0e1e30; border-color: #378add; color: #b5d4f4; }
+  .callout.success { background: #141f08; border-color: #639922; color: #c0dd97; }
+}
+
+
+/* ── BARRE DI CONFRONTO ──────────────────────────────────────
+   Uso nel .md:
+   <div class="bar-chart">
+     <div class="bar-item">
+       <span class="bar-item-label">Email</span>
+       <div class="bar-track">
+         <div class="bar-fill red" style="width:78%">78%</div>
+       </div>
+     </div>
+   </div>
+   Colori fill: red | amber | teal | blue | gray
+   ──────────────────────────────────────────────────────────── */
+
+.bar-chart {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin: 1.5rem 0;
+}
+
+.bar-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.bar-item-label {
+  font-size: 13px;
+  color: #888;
+  min-width: 90px;
+  text-align: right;
+  flex-shrink: 0;
+}
+
+.bar-track {
+  flex: 1;
+  background: #f0f0f0;
+  border-radius: 4px;
+  height: 26px;
+  overflow: hidden;
+}
+
+.bar-fill {
+  height: 100%;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  padding-left: 10px;
+  font-size: 12px;
+  font-weight: 600;
+  min-width: 36px;
+}
+
+.bar-fill.red   { background: #f09595; color: #501313; }
+.bar-fill.amber { background: #fac775; color: #412402; }
+.bar-fill.teal  { background: #5dcaa5; color: #04342c; }
+.bar-fill.blue  { background: #85b7eb; color: #042c53; }
+.bar-fill.gray  { background: #b4b2a9; color: #2c2c2a; }
+
+@media (prefers-color-scheme: dark) {
+  .bar-track          { background: #2a2a2a; }
+  .bar-item-label     { color: #666; }
+  .bar-fill.red       { background: #791f1f; color: #f7c1c1; }
+  .bar-fill.amber     { background: #633806; color: #fac775; }
+  .bar-fill.teal      { background: #085041; color: #9fe1cb; }
+  .bar-fill.blue      { background: #0c447c; color: #b5d4f4; }
+  .bar-fill.gray      { background: #444441; color: #d3d1c7; }
+}
+
+
+/* ── TIMELINE ────────────────────────────────────────────────
+   Uso nel .md:
+   <div class="timeline">
+     <div class="timeline-item active">
+       <div class="timeline-date">Passo 1</div>
+       <div class="timeline-title">Titolo</div>
+       <div class="timeline-body">Descrizione.</div>
+     </div>
+   </div>
+   Varianti item: (nessuna) | active | danger | warning
+   ──────────────────────────────────────────────────────────── */
+
+.timeline {
+  position: relative;
+  padding-left: 28px;
+  margin: 1.5rem 0;
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 8px;
+  top: 6px;
+  bottom: 6px;
+  width: 1.5px;
+  background: #ddd;
+}
+
+.timeline-item {
+  position: relative;
+  margin-bottom: 1.25rem;
+}
+
+.timeline-item:last-child {
+  margin-bottom: 0;
+}
+
+.timeline-item::before {
+  content: '';
+  position: absolute;
+  left: -24px;
+  top: 5px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #fff;
+  border: 2px solid #ccc;
+}
+
+.timeline-item.active::before  { background: #1d9e75; border-color: #1d9e75; }
+.timeline-item.danger::before  { background: #e24b4a; border-color: #e24b4a; }
+.timeline-item.warning::before { background: #ef9f27; border-color: #ef9f27; }
+
+.timeline-date {
+  font-size: 11px;
+  color: #aaa;
+  margin-bottom: 2px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.timeline-title {
+  font-size: 15px;
+  font-weight: 600;
+  color: #2d2d2d;
+  margin-bottom: 3px;
+}
+
+.timeline-body {
+  font-size: 13px;
+  color: #666;
+  line-height: 1.55;
+}
+
+@media (prefers-color-scheme: dark) {
+  .timeline::before      { background: #444; }
+  .timeline-item::before { background: #1a1a1a; border-color: #555; }
+  .timeline-title        { color: #e8e8e8; }
+  .timeline-body         { color: #999; }
+  .timeline-date         { color: #666; }
+}
+
+
+/* ── CITAZIONE MAGAZINE ──────────────────────────────────────
+   Uso nel .md:
+   <div class="pull-quote">
+     <p>"La frase da evidenziare va qui."</p>
+     <cite>— Fonte o autore</cite>
+   </div>
+   ──────────────────────────────────────────────────────────── */
+
+.pull-quote {
+  border-top: 2px solid #2d2d2d;
+  border-bottom: 1px solid #eee;
+  padding: 1.25rem 0;
+  margin: 2rem 0;
+}
+
+.pull-quote p {
+  font-size: 1.2rem;
+  font-weight: 500;
+  line-height: 1.5;
+  color: #2d2d2d;
+  margin: 0 0 0.5rem;
+  font-style: italic;
+}
+
+.pull-quote cite {
+  font-size: 12px;
+  color: #aaa;
+  font-style: normal;
+  letter-spacing: 0.05em;
+}
+
+@media (prefers-color-scheme: dark) {
+  .pull-quote            { border-top-color: #e8e8e8; border-bottom-color: #333; }
+  .pull-quote p          { color: #e8e8e8; }
+}
+
+
+/* ── TABELLA LEGGIBILE ───────────────────────────────────────
+   Uso nel .md: tabella Markdown standard, senza classi extra.
+   Questo CSS la rende automaticamente più leggibile.
+   ──────────────────────────────────────────────────────────── */
+
+.post-body table,
+article table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+  margin: 1.5rem 0;
+}
+
+.post-body table th,
+article table th {
+  background: #f5f5f5;
+  font-weight: 600;
+  padding: 10px 14px;
+  text-align: left;
+  border-bottom: 2px solid #e0e0e0;
+  color: #2d2d2d;
+}
+
+.post-body table td,
+article table td {
+  padding: 9px 14px;
+  border-bottom: 1px solid #f0f0f0;
+  color: #444;
+  vertical-align: top;
+}
+
+.post-body table tr:last-child td,
+article table tr:last-child td {
+  border-bottom: none;
+}
+
+@media (prefers-color-scheme: dark) {
+  .post-body table th,
+  article table th {
+    background: #2a2a2a;
+    border-bottom-color: #444;
+    color: #e8e8e8;
+  }
+  .post-body table td,
+  article table td {
+    border-bottom-color: #2a2a2a;
+    color: #aaa;
+  }
+}
