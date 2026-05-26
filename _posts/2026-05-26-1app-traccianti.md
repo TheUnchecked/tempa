@@ -1,3 +1,9 @@
+---
+layout: post
+title: "Come ci spiano attraverso le app"
+subtitle: "Ogni app ha un sistema che comunica tutto di noi alle aziende."
+tags: [sicurezza digitale, privacy, app, società]
+---
 ## Lo smartphone è la prima fonte di "spionaggio"!
 
 L'uso degli smartphone in numeri
