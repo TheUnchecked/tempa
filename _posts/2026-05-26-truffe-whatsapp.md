@@ -1,161 +1,156 @@
 ---
 layout: post
-title: "Caro genitore, nonno amico, NON rispondere a quel messaggio WhatsApp!"
-subtitle: "Le truffe si sono spostate sullo smartphone. Ecco come riconoscerle."
-tags: [sicurezza digitale, truffe, whatsapp, società]
+title: "Come ci spiano attraverso le app"
+subtitle: "Ogni app ha un sistema che comunica tutto di noi alle aziende."
+tags: [sicurezza digitale, privacy, app, società]
 ---
 
-Se hai letto il mio articolo su [come riconoscere una mail truffa](/tempa/2026-05-16-mail-truffa/), sai già che i truffatori sono organizzati, professionali e inarrestabili.
+Che le Big Tech sappiano tutto di noi è noto — anzi loro sanno e si ricordano più cose di quelle che noi stessi dimentichiamo.
 
-Ma c'è una novità: si sono spostati su WhatsApp.
+Ma ti sei mai chiesto come fanno?
 
-E lì è ancora più pericoloso. Perché WhatsApp lo usiamo per parlare con i nostri figli, i nipoti, gli amici di una vita. È uno spazio che sentiamo *nostro*, *sicuro*, *privato*. Ed è esattamente per questo che funziona così bene come trappola.
+<div class="callout danger">
+  <strong>Costruiscono le nostre identità digitali</strong>
+  Sono vere e proprie "personas" che utilizzano per veicolare pubblicità, contenuti social, spam e molto altro.
+</div>
+
+---
+
+## Lo smartphone è la prima fonte di "spionaggio"
+
+L'uso degli smartphone in numeri:
 
 <div class="stat-row">
   <div class="stat-card accent-red">
-    <div class="stat-number">47 Mln</div>
-    <div class="stat-label">Italiani che usano WhatsApp ogni giorno</div>
+    <div class="stat-number">95%</div>
+    <div class="stat-label">Persone che usano uno smartphone</div>
   </div>
   <div class="stat-card accent-amber">
-    <div class="stat-number">+61%</div>
-    <div class="stat-label">Aumento truffe via messaggistica nel 2024</div>
+    <div class="stat-number">93</div>
+    <div class="stat-label">Media app installate per smartphone</div>
   </div>
   <div class="stat-card">
-    <div class="stat-number">Over 60</div>
-    <div class="stat-label">La fascia d'età più colpita, anche qui</div>
+    <div class="stat-number">41</div>
+    <div class="stat-label">Quante ne usiamo davvero al mese</div>
   </div>
 </div>
 
----
+Dai numeri si capisce che ormai anche i gatti e i cani hanno uno smartphone. È vero che in media se ne usano una quarantina tra tutte quelle installate — quando va bene — ma **attenzione: anche quelle inutilizzate ci spiano** e riportano tutto ai cattivoni delle Big Tech.
 
-## Il messaggio che arriva sempre di domenica sera.
-
-"Ciao mamma, mi si è rotto il telefono. Questo è il mio nuovo numero. Puoi mandarmi 200 euro? Ti restituisco lunedì."
-
-Sembra tuo figlio. Scrive come lui. Sa che sei sua madre. Sa il tuo nome.
-
-Non è tuo figlio.
-
-<div class="callout danger">
-  <strong>Si chiama truffa "Hi Mum"</strong>
-  In Italia ha fruttato milioni di euro negli ultimi due anni. Funziona perché fa leva sulla cosa più potente che esiste: l'istinto di un genitore di aiutare il proprio figlio.
-</div>
+Andiamo con calma, che ci arriviamo.
 
 ---
 
-## Come funziona, passo per passo.
+## Cosa fanno le app
+
+Installare un'app è semplice: vai sullo store, cerchi, installi. Un minuto al massimo.
+
+Ma cosa hanno dentro queste app, ce lo siamo mai chiesti davvero?
+
+Prendiamo un'app che ho installato nel mio telefono e che usiamo in famiglia per la spesa: **Bring!**
 
 <div class="timeline">
   <div class="timeline-item active">
     <div class="timeline-date">Passo 1</div>
-    <div class="timeline-title">Arriva il messaggio da un numero sconosciuto</div>
-    <div class="timeline-body">Il truffatore compra elenchi di numeri e manda lo stesso messaggio a migliaia di persone. Aspetta chi risponde.</div>
+    <div class="timeline-title">Download e installazione</div>
+    <div class="timeline-body">Pochi leggono cosa c'è scritto nei dettagli prima di scaricare. Ci pensiamo dopo — ma il "dopo" non arriva mai.</div>
   </div>
   <div class="timeline-item warning">
     <div class="timeline-date">Passo 2</div>
-    <div class="timeline-title">Crea urgenza e blocca la verifica</div>
-    <div class="timeline-body">"Ho bisogno subito." "Non chiamare il vecchio numero, non funziona." "Non dirlo a papà." Serve a impedire che tu verifichi.</div>
+    <div class="timeline-title">Apriamo l'app</div>
+    <div class="timeline-body">In base all'applicazione ci verrà chiesto di accedere alle foto, ai contatti, alla posizione. Due domande a questo punto ce le dovremmo già fare.</div>
   </div>
   <div class="timeline-item danger">
     <div class="timeline-date">Passo 3</div>
-    <div class="timeline-title">Chiede denaro o dati</div>
-    <div class="timeline-body">Un bonifico, un buono regalo, o i dati della carta. Anche piccole cifre — spesso chiedono "ancora un po'" dopo il primo pagamento.</div>
+    <div class="timeline-title">Uso dell'applicazione</div>
+    <div class="timeline-body">Sembra tutto normale. Chiudo l'app e passo ad altro. Ma l'app non si è fermata.</div>
   </div>
 </div>
 
 ---
 
-## Le varianti più comuni.
+## Vuoi vedere davvero cosa succede?
 
-Oltre alla "Hi Mum", ci sono altri schemi diffusi in Italia:
+Quasi tutte le applicazioni comunicano con il produttore o con lo store 24 ore su 24, con un segnale costante che verifica di essere sempre online e collegato. Viene spacciato come "normale" — serve per installare aggiornamenti e raccogliere dati di diagnostica.
 
-**Il pacco bloccato** — Un messaggio che sembra di DHL o Poste con un link per "sbloccare la consegna" pagando 2 euro. Il link porta a una pagina falsa che ruba i dati della carta.
+Ma la realtà è diversa. Viene fatto anche — e soprattutto — per costruire le identità digitali di cui ti parlavo all'inizio.
 
-**Il concorso vinto** — "Hai vinto un premio! Clicca qui per ritirarlo." Il link installa un software che legge messaggi e dati bancari.
+---
 
-**L'assistenza tecnica** — "Il tuo account WhatsApp scade oggi. Verifica qui."
+## Cosa sono i traccianti
 
-<div class="callout info">
-  <strong>Lo sapevi?</strong>
-  WhatsApp non manda mai messaggi che chiedono di verificare il tuo account o che ti avvisano della scadenza. Se lo vedi, è una truffa al 100%.
+Una piccola nota tecnica, ma non troppo.
+
+I traccianti sono elementi software, in genere mascherati da strumenti di analytics o pubblicità, che attivano meccanismi di monitoraggio **capaci di seguire il comportamento degli utenti online**. Non sono installati solo nelle app — li trovi nei browser, nelle smart TV, nelle Alexa, ovunque.
+
+Nelle app li trovi sotto forma di SDK: Facebook Pixel, Google Firebase, AppsFlyer. Monitorano azioni specifiche — acquisti, click, navigazione — e forniscono alle piattaforme tutti i dettagli sul comportamento dell'utente, **anche al di fuori dei confini dell'app stessa**.
+
+Ho già sentito la frase: *"vabbè ma che fa, mica ci rubano qualcosa?"*
+
+Ognuno può pensarla come vuole. Ma è giusto sapere che i nostri dati valgono oro — per noi, e soprattutto per le aziende di data broker e advertiser.
+
+---
+
+## Come usano i nostri dati
+
+**Le nostre interazioni** — monitorano ogni nostra interazione con siti e app, raccogliendo dati che le aziende convertono in pubblicità mirata.
+
+**Annunci personalizzati** — hanno i dati, sanno cosa ci piace e cosa no. Quindi ci arrivano pubblicità solo di prodotti per cani, se amiamo i cani. E solo di una determinata marca, se quella marca paga di più.
+
+**Profilazione e segmentazione** — creano cluster di utenti in base a interessi, comportamenti e dati demografici, alimentando strategie di marketing sempre più sofisticate.
+
+**Tracciamento multi-dispositivo** — grazie al fingerprinting e agli app tracker, continuano a seguirti anche quando passi da uno smartphone al tablet, o dal mobile al web.
+
+**Controllo e sorveglianza** — in alcuni casi, i dati raccolti vengono usati anche da governi e agenzie di intelligence per fini di sicurezza nazionale o investigazione.
+
+---
+
+## Quindi la mia app Bring! come è messa?
+
+Piccolo reminder: l'applicazione serve a fare la **lista della spesa**.
+
+State pensando a quello che penso io? Sì. Se quest'app ha dei traccianti, sanno cosa compriamo.
+
+Ebbene sì — ne contiene **6**:
+
+**AppsFlyer** — azienda israeliana, serve a monitorare e ottimizzare le campagne di marketing per app mobile.
+
+**Facebook Analytics** — lo troveremo ovunque, anche sulla carta igienica. Serve a creare campagne pubblicitarie basate sui tuoi comportamenti.
+
+**Facebook Login** — ti permette di accedere all'app tramite Facebook. Così sapranno ancora più cose di te, compreso che fai post contro Salvini.
+
+**Facebook Share** — perché mai dovrei condividere la mia lista della spesa su Facebook?
+
+**Google Crashlytics** — in teoria serve a segnalare crash e malfunzionamenti. In pratica, chi si legge la documentazione scopre che fa anche altro.
+
+**Google Firebase Analytics** — se quello di Facebook lo trovi sulla carta igienica, questo lo trovi anche nelle analisi del sangue. Cosa fa? Troppe cose per elencarle tutte.
+
+<div class="callout warning">
+  <strong>Ricapitolando</strong>
+  Un'app che dovrebbe servire SOLO per la lista della spesa condivide i tuoi dati con 6 traccianti di tre aziende diverse. Senza che tu lo sappia. Senza che te lo abbiano spiegato.
 </div>
 
 ---
 
-## Quanto sono diffuse le diverse truffe?
-
-<div class="bar-chart">
-  <div class="bar-item">
-    <span class="bar-item-label">Hi Mum</span>
-    <div class="bar-track"><div class="bar-fill red" style="width:72%">72%</div></div>
-  </div>
-  <div class="bar-item">
-    <span class="bar-item-label">Pacco falso</span>
-    <div class="bar-track"><div class="bar-fill amber" style="width:54%">54%</div></div>
-  </div>
-  <div class="bar-item">
-    <span class="bar-item-label">Concorso</span>
-    <div class="bar-track"><div class="bar-fill teal" style="width:31%">31%</div></div>
-  </div>
-  <div class="bar-item">
-    <span class="bar-item-label">Assistenza</span>
-    <div class="bar-track"><div class="bar-fill blue" style="width:24%">24%</div></div>
-  </div>
-</div>
-
----
-
-## Tre segnali che non si possono nascondere.
-
-**Primo: il numero è sconosciuto.** Tuo figlio ha già il tuo numero. Se ti scrive da un numero nuovo, la prima cosa da fare è chiamare il vecchio numero. Non rispondere al messaggio — chiama.
-
-**Secondo: c'è sempre urgenza e sempre denaro.** L'urgenza serve a bloccare il ragionamento. Una persona reale in difficoltà capisce se dici "ti richiamo tra dieci minuti".
-
-**Terzo: ti chiedono di non verificare.** Chiunque ti chieda di non verificare la sua identità ha un motivo per farlo.
+## La domanda che rimane.
 
 <div class="pull-quote">
-  <p>"Prima di mandare qualsiasi somma di denaro, anche piccola, anche a qualcuno che sembra tuo figlio: chiudi WhatsApp. Chiama il numero che conosci da sempre. Senti la voce. Poi decidi."</p>
+  <p>"Non ci rubano niente. Ci chiedono solo di sapere tutto."</p>
 </div>
 
----
+La prossima volta che installi un'app — qualsiasi app — prenditi trenta secondi prima di premere "Installa". Vai nei dettagli dello store. Cerca la sezione "Sicurezza dei dati". Guarda cosa raccoglie e con chi lo condivide.
 
-## Se hai già risposto.
+Non devi disinstallare tutto. Devi solo smettere di farlo senza sapere.
 
-Non è colpa tua. Queste truffe sono costruite da professionisti per ingannare persone normali.
-
-<div class="timeline">
-  <div class="timeline-item active">
-    <div class="timeline-date">Subito</div>
-    <div class="timeline-title">Non mandare altri soldi</div>
-    <div class="timeline-body">Anche se ti convincono che "serve ancora un po'".</div>
-  </div>
-  <div class="timeline-item active">
-    <div class="timeline-date">Poi</div>
-    <div class="timeline-title">Blocca il numero e segnala a WhatsApp</div>
-    <div class="timeline-body">Tre puntini → Segnala. Aiuta a proteggere anche gli altri.</div>
-  </div>
-  <div class="timeline-item active">
-    <div class="timeline-date">Infine</div>
-    <div class="timeline-title">Denuncia alla Polizia Postale</div>
-    <div class="timeline-body">Su commissariatops.it puoi farlo anche online, senza uscire di casa.</div>
-  </div>
+<div class="callout success">
+  <strong>Cosa puoi fare subito</strong>
+  Su Android vai in Impostazioni → Privacy → Dashboard privacy. Su iPhone vai in Impostazioni → Privacy e sicurezza. Vedrai quali app hanno avuto accesso a cosa nelle ultime 24 ore. Potrebbe sorprenderti.
 </div>
-
----
-
-## La domanda che vale anche qui.
-
-Nel mio articolo sulle [mail truffa](/tempa/2026-05-16-mail-truffa/) ho chiesto quanti di noi si siedono vicino a un genitore e gli mostrano come riconoscere una mail falsa. Vale lo stesso per WhatsApp.
-
-Mostragli questo articolo. Fategli fare una prova: "Se ti arriva un messaggio così, cosa fai?"
-
-**Non serve una lezione. Basta una conversazione.**
 
 ---
 
 ## Fonti
 
-- **Polizia Postale** — Rapporto Cybercrime 2024
-- **Europol** — *Hi Mum scam* report 2023
-- **WhatsApp Safety Center** — [faq.whatsapp.com](https://faq.whatsapp.com/it/)
-- **Commissariato di PS Online** — [commissariatops.it](https://www.commissariatops.it)
+- **Exodus Privacy** — Database dei traccianti nelle app Android, [exodus-privacy.eu.org](https://exodus-privacy.eu.org)
+- **Garante Privacy italiano** — Informazioni sul trattamento dei dati nelle app, [garanteprivacy.it](https://www.garanteprivacy.it)
+- **Mozilla Foundation** — *Privacy Not Included*, guida alla privacy delle app, [foundation.mozilla.org](https://foundation.mozilla.org/it/privacynotincluded/)
