@@ -125,6 +125,14 @@ Il contrasto è netto. Leggibile da chiunque, una volta che sa cosa cercare.
 
 ---
 
+## Le truffe non si fermano alla mail.
+
+La mail è solo uno dei canali. Gli stessi truffatori usano anche WhatsApp, SMS, e telefonate. Se vuoi capire come funzionano le [truffe via WhatsApp](/2026-05-26-truffe-whatsapp) — sempre più diffuse e sempre più convincenti — ho scritto una guida anche su quello.
+
+Il meccanismo è lo stesso. Cambiano solo gli strumenti.
+
+---
+
 ## La domanda che mi faccio.
 
 Non è quante truffe vengono denunciate. Non è quante leggi vengono approvate.
