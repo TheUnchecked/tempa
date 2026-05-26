@@ -1,13 +1,8 @@
 ---
-
-## layout: post title: "Come ci spiano attraverso le app" subtitle: "Ogni app ha un sistema che comunica tutto di noi alle aziende." tags: [sicurezza digitale, privacy, app, società]
-
-Che le Big Tech sappiano tutto di noi è noto   anzi loro sanno e si ricordano più cose di quelle che noi stessi dimentichiamo.
-
-Ma ti sei mai chiesto come fanno?
-
-<div class="callout danger"> <strong>Costruiscono le nostre identità digitali</strong> Sono vere e proprie "personas" che utilizzano per veicolare pubblicità, contenuti social, spam e molto altro. </div>
-
+layout: post
+title: "Come ci spiano attraverso le app"
+subtitle: "Ogni app ha un sistema che comunica tutto di noi alle aziende."
+tags: [sicurezza digitale, privacy, app, società]
 ---
 
 ## Lo smartphone è la prima fonte di "spionaggio"
