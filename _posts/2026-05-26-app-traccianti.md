@@ -1,4 +1,12 @@
-
+---
+layout: post
+title: "Come ci spiano attraverso le app"
+subtitle: "Ogni app ha un sistema che comunica tutto di noi alle aziende."
+tags: [sicurezza digitale, truffe, phishing, società]
+# cover-img: "/assets/img/.jpg"
+# share-img: "/assets/img/.jpg"
+# thumbnail-img: "/assets/img/.jpg"
+---
 <!-- TEMPLATE CON COMPONENTI VISIVI ================================ Usa questo template per articoli che contengono: - dati e statistiche - sequenze di eventi o passi - confronti tra elementi - concetti da evidenziare con forza Cancella i commenti prima di pubblicare. -->
 
 Che le Big tech sappiano tutto di noi è noto, anzi loro sanno e si ricordano più cose che noi stessi dimentichiamo.
