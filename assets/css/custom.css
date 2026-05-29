@@ -300,57 +300,6 @@ code, pre {
    STAT CARDS
    ============================================ */
 .stat-row {
-  display: flex;
-  gap: 1rem;
-  margin: 2rem 0;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-
-.stat-card {
-  flex: 1;
-  min-width: 160px;
-  max-width: 280px;
-  background: #1a1a1a;
-  border-top: 3px solid #c8e64a;
-  border-radius: 4px;
-  padding: 1.5rem 1rem;
-  text-align: center;
-}
-
-.stat-card .stat-number {
-  font-size: 2rem;
-  font-weight: 700;
-  color: #c8e64a;
-  line-height: 1.2;
-  margin-bottom: 0.5rem;
-}
-
-.stat-card .stat-label {
-  font-size: 0.75rem;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  color: #999999;
-  line-height: 1.4;
-}
-/* ============================================================
-   TEMPA — Componenti visivi per gli articoli
-   Da aggiungere in fondo a assets/css/custom.css
-   ============================================================ */
-
-
-/* ── STAT CARDS ─────────────────────────────────────────────
-   Uso nel .md:
-   <div class="stat-row">
-     <div class="stat-card accent-red">
-       <div class="stat-number">3,4 Mld€</div>
-       <div class="stat-label">Persi in truffe nel 2024</div>
-     </div>
-   </div>
-   Varianti colore: accent-red | accent-amber | accent-teal | (nessuna = grigio)
-   ──────────────────────────────────────────────────────────── */
-
-.stat-row {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
   gap: 12px;
@@ -383,23 +332,20 @@ code, pre {
 .stat-card.accent-teal  .stat-number { color: #0f6e56; }
 .stat-card.accent-blue  .stat-number { color: #185fa5; }
 
-/* Dark mode */
+/* Dark mode — stat cards */
 @media (prefers-color-scheme: dark) {
-  .stat-card { background: #2a2a2a; }
-  .stat-number { color: #e8e8e8; }
-  .stat-label  { color: #888; }
+  .stat-card    { background: #2a2a2a; }
+  .stat-number  { color: #e8e8e8; }
+  .stat-label   { color: #888; }
 }
+[data-theme="dark"] .stat-card   { background: #2a2a2a; }
+[data-theme="dark"] .stat-number { color: #e8e8e8; }
+[data-theme="dark"] .stat-label  { color: #888; }
 
 
-/* ── CALLOUT BOX ─────────────────────────────────────────────
-   Uso nel .md:
-   <div class="callout danger">
-     <strong>Attenzione</strong>
-     Il testo del callout va qui.
-   </div>
-   Varianti: danger | warning | info | success
-   ──────────────────────────────────────────────────────────── */
-
+/* ============================================
+   CALLOUT BOX
+   ============================================ */
 .callout {
   border-radius: 0 8px 8px 0;
   border-left: 3px solid;
@@ -420,27 +366,22 @@ code, pre {
 .callout.info    { background: #e6f1fb; border-color: #378add; color: #042c53; }
 .callout.success { background: #eaf3de; border-color: #639922; color: #173404; }
 
+/* Dark mode — callout */
 @media (prefers-color-scheme: dark) {
   .callout.danger  { background: #2e1515; border-color: #e24b4a; color: #f7c1c1; }
   .callout.warning { background: #2e2210; border-color: #ef9f27; color: #fac775; }
   .callout.info    { background: #0e1e30; border-color: #378add; color: #b5d4f4; }
   .callout.success { background: #141f08; border-color: #639922; color: #c0dd97; }
 }
+[data-theme="dark"] .callout.danger  { background: #2e1515; border-color: #e24b4a; color: #f7c1c1; }
+[data-theme="dark"] .callout.warning { background: #2e2210; border-color: #ef9f27; color: #fac775; }
+[data-theme="dark"] .callout.info    { background: #0e1e30; border-color: #378add; color: #b5d4f4; }
+[data-theme="dark"] .callout.success { background: #141f08; border-color: #639922; color: #c0dd97; }
 
 
-/* ── BARRE DI CONFRONTO ──────────────────────────────────────
-   Uso nel .md:
-   <div class="bar-chart">
-     <div class="bar-item">
-       <span class="bar-item-label">Email</span>
-       <div class="bar-track">
-         <div class="bar-fill red" style="width:78%">78%</div>
-       </div>
-     </div>
-   </div>
-   Colori fill: red | amber | teal | blue | gray
-   ──────────────────────────────────────────────────────────── */
-
+/* ============================================
+   BARRE DI CONFRONTO
+   ============================================ */
 .bar-chart {
   display: flex;
   flex-direction: column;
@@ -487,6 +428,7 @@ code, pre {
 .bar-fill.blue  { background: #85b7eb; color: #042c53; }
 .bar-fill.gray  { background: #b4b2a9; color: #2c2c2a; }
 
+/* Dark mode — bar chart */
 @media (prefers-color-scheme: dark) {
   .bar-track          { background: #2a2a2a; }
   .bar-item-label     { color: #666; }
@@ -496,20 +438,18 @@ code, pre {
   .bar-fill.blue      { background: #0c447c; color: #b5d4f4; }
   .bar-fill.gray      { background: #444441; color: #d3d1c7; }
 }
+[data-theme="dark"] .bar-track      { background: #2a2a2a; }
+[data-theme="dark"] .bar-item-label { color: #666; }
+[data-theme="dark"] .bar-fill.red   { background: #791f1f; color: #f7c1c1; }
+[data-theme="dark"] .bar-fill.amber { background: #633806; color: #fac775; }
+[data-theme="dark"] .bar-fill.teal  { background: #085041; color: #9fe1cb; }
+[data-theme="dark"] .bar-fill.blue  { background: #0c447c; color: #b5d4f4; }
+[data-theme="dark"] .bar-fill.gray  { background: #444441; color: #d3d1c7; }
 
 
-/* ── TIMELINE ────────────────────────────────────────────────
-   Uso nel .md:
-   <div class="timeline">
-     <div class="timeline-item active">
-       <div class="timeline-date">Passo 1</div>
-       <div class="timeline-title">Titolo</div>
-       <div class="timeline-body">Descrizione.</div>
-     </div>
-   </div>
-   Varianti item: (nessuna) | active | danger | warning
-   ──────────────────────────────────────────────────────────── */
-
+/* ============================================
+   TIMELINE
+   ============================================ */
 .timeline {
   position: relative;
   padding-left: 28px;
@@ -572,6 +512,7 @@ code, pre {
   line-height: 1.55;
 }
 
+/* Dark mode — timeline */
 @media (prefers-color-scheme: dark) {
   .timeline::before      { background: #444; }
   .timeline-item::before { background: #1a1a1a; border-color: #555; }
@@ -579,16 +520,16 @@ code, pre {
   .timeline-body         { color: #999; }
   .timeline-date         { color: #666; }
 }
+[data-theme="dark"] .timeline::before      { background: #444; }
+[data-theme="dark"] .timeline-item::before { background: #1a1a1a; border-color: #555; }
+[data-theme="dark"] .timeline-title        { color: #e8e8e8; }
+[data-theme="dark"] .timeline-body         { color: #999; }
+[data-theme="dark"] .timeline-date         { color: #666; }
 
 
-/* ── CITAZIONE MAGAZINE ──────────────────────────────────────
-   Uso nel .md:
-   <div class="pull-quote">
-     <p>"La frase da evidenziare va qui."</p>
-     <cite>— Fonte o autore</cite>
-   </div>
-   ──────────────────────────────────────────────────────────── */
-
+/* ============================================
+   CITAZIONE MAGAZINE
+   ============================================ */
 .pull-quote {
   border-top: 2px solid #2d2d2d;
   border-bottom: 1px solid #eee;
@@ -612,17 +553,18 @@ code, pre {
   letter-spacing: 0.05em;
 }
 
+/* Dark mode — pull quote */
 @media (prefers-color-scheme: dark) {
-  .pull-quote            { border-top-color: #e8e8e8; border-bottom-color: #333; }
-  .pull-quote p          { color: #e8e8e8; }
+  .pull-quote   { border-top-color: #e8e8e8; border-bottom-color: #333; }
+  .pull-quote p { color: #e8e8e8; }
 }
+[data-theme="dark"] .pull-quote   { border-top-color: #e8e8e8; border-bottom-color: #333; }
+[data-theme="dark"] .pull-quote p { color: #e8e8e8; }
 
 
-/* ── TABELLA LEGGIBILE ───────────────────────────────────────
-   Uso nel .md: tabella Markdown standard, senza classi extra.
-   Questo CSS la rende automaticamente più leggibile.
-   ──────────────────────────────────────────────────────────── */
-
+/* ============================================
+   TABELLA LEGGIBILE
+   ============================================ */
 .post-body table,
 article table {
   width: 100%;
@@ -654,6 +596,7 @@ article table tr:last-child td {
   border-bottom: none;
 }
 
+/* Dark mode — tabella */
 @media (prefers-color-scheme: dark) {
   .post-body table th,
   article table th {
@@ -666,4 +609,15 @@ article table tr:last-child td {
     border-bottom-color: #2a2a2a;
     color: #aaa;
   }
+}
+[data-theme="dark"] .post-body table th,
+[data-theme="dark"] article table th {
+  background: #2a2a2a;
+  border-bottom-color: #444;
+  color: #e8e8e8;
+}
+[data-theme="dark"] .post-body table td,
+[data-theme="dark"] article table td {
+  border-bottom-color: #2a2a2a;
+  color: #aaa;
 }
