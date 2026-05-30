@@ -1,0 +1,945 @@
+<!DOCTYPE html>
+<html lingua="esso">
+<testa>
+<meta impostare di caratteri="UTF-8">
+<meta nome="finestra di visualizzazione" contenuto="larghezza=larghezza del dispositivo, scala iniziale=1,0">
+<titolo>Generatore di blog</titolo>
+<stile>
+ @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=IBM+Plex+Sans:wght@300;400;500;600&display=swap');
+
+ :radice {
+ --bg: #0f0f0f;
+ --superficie: #1a1a1a;
+ --superficie2: #222;
+ --confine: #2e2e2e;
+ --attivo al confinare: #555;
+ --testo: #e8e8e8;
+ --testo disattivato: #666;
+ --testo-dim: #999;
+ --accento: #f0c040;
+ --accento-dim: #a07c1a;
+ --pericolo: #e05555;
+ --successo: #4caf7d;
+ --info: #5b9bd5;
+ --mono: 'IBM Plex Mono', monospazio;
+ --sans: 'IBM Plex Sans', sans-serif;
+  }
+
+ * {dimensioni della scatola: scatola di confinare; margine: 0; imbottitura: 0; }
+
+ corpo {
+ sfondo: var(--bg);
+ colore: var(--testo);
+ famiglia di caratteri: var(--sans);
+ dimensione del carattere: 14px;
+ altezza minima: 100vh;
+  }
+
+ /* DISPOSIZIONE */
+ .app {
+ visualizzazione: griglia;
+ righe del modello di Griglia: 48px 1fr;
+ altezza minima: 100vh;
+  }
+
+ intestazione {
+ sfondo: var(--superficie);
+ bordo inferiore: 1px solido var(--confinare);
+ display: flessibile;
+ allinea-elementi: centro;
+ imbottitura: 0 20px;
+ spazio: 12px;
+ posizione: appiccicoso;
+ superiore: 0;
+ indice z: 100;
+  }
+
+ intestazione .logo {
+ famiglia di caratteri: var(--mono);
+ peso del carattere: 600;
+ dimensione del carattere: 13px;
+    color: var(--accento);
+    letter-spacing: 0,05loro;
+  }
+
+  header .step-nav {
+    display: flex;
+    gap: 4px;
+    margin-left: auto;
+  }
+
+  .step-pill {
+    font-family: var(--mono);
+    font-size: 11px;
+    padding: 3px 10px;
+    border-radius: 20px;
+    border: 1px solido var(--confine);
+    color: var(--testo disattivato);
+    cursor: pointer;
+    transition: all . .15s;
+    white-space: nowrap;
+  }
+  .step-pill:hover { colore del bordo: var(--attivo al confine); colore: var(--testo-dim); }
+  .step-pill.active { sfondo: var(--accento); colore: #000; colore del bordo: var(--accent); font-weight: 600; }
+  .step-pill.done { colore del bordo: var(--successo); colore: var(--successo); }
+
+  main { padding: 24px 20px; larghezza massima: 820px; margine: 0 auto; larghezza: 100%; }
+
+  /* STEPS */
+  .step { display: nessuno; }
+  .step.active { visualizzazione: bloccare; }
+
+  .step-title {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--accento);
+    letter-spacing: . .1loro;
+    text-transform: maiuscolo;
+    margin-bottom: 4px;
+  }
+  .step-desc {
+    font-size: 18px;
+    font-weight: 500;
+    margin-bottom: 24px;
+    color: var(--testo);
+  }
+
+  /* FIELDS */
+  .field { margine-fondo: 16px; }
+  label {
+    display: block;
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--text-muted);
+    letter-spacing: .05em;
+    margin-bottom: 6px;
+    text-transform: uppercase;
+  }
+  label span { color: var(--danger); margin-left: 2px; }
+
+  input[type=text], textarea {
+    width: 100%;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    color: var(--text);
+    font-family: var(--sans);
+    font-size: 14px;
+    padding: 10px 12px;
+    border-radius: 6px;
+    outline: none;
+    transition: border-color .15s;
+    resize: vertical;
+  }
+  input[type=text]:focus, textarea:focus { border-color: var(--accent); }
+  textarea { min-height: 320px; line-height: 1.65; }
+
+  .hint { font-size: 12px; color: var(--text-muted); margin-top: 5px; }
+
+  /* BUTTONS */
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    padding: 10px 20px;
+    border-radius: 6px;
+    border: none;
+    font-family: var(--mono);
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all .15s;
+    letter-spacing: .03em;
+  }
+  .btn-primary { background: var(--accent); color: #000; }
+  .btn-primary:hover { background: #ffd860; }
+  .btn-ghost { background: transparent; border: 1px solid var(--border); color: var(--text-dim); }
+  .btn-ghost:hover { border-color: var(--border-active); color: var(--text); }
+  .btn-danger { background: transparent; border: 1px solid var(--danger); color: var(--danger); }
+  .btn-danger:hover { background: var(--danger); color: #fff; }
+  .btn-success { background: var(--success); color: #000; }
+  .btn-success:hover { filter: brightness(1.1); }
+  .btn:disabled { opacity: .4; cursor: default; }
+
+  .btn-row { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 20px; }
+
+  /* SECTION CARDS */
+  .section-grid { display: flex; flex-direction: column; gap: 10px; margin-bottom: 20px; }
+
+  .section-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    overflow: hidden;
+    transition: border-color .15s;
+  }
+  .section-card.enabled { border-color: var(--accent-dim); }
+
+  .section-card-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 14px;
+    cursor: pointer;
+    user-select: none;
+  }
+  .section-card-header:hover { background: var(--surface2); }
+
+  .toggle-switch {
+    width: 36px; height: 20px;
+    background: var(--border);
+    border-radius: 10px;
+    position: relative;
+    flex-shrink: 0;
+    transition: background .2s;
+  }
+  .toggle-switch::after {
+    content: '';
+    width: 14px; height: 14px;
+    background: #fff;
+    border-radius: 50%;
+    position: absolute;
+    top: 3px; left: 3px;
+    transition: left .2s;
+  }
+  .section-card.enabled .toggle-switch { background: var(--accent); }
+  .section-card.enabled .toggle-switch::after { left: 19px; }
+
+  .section-card-info { flex: 1; }
+  .section-card-name { font-weight: 600; font-size: 13px; }
+  .section-card-desc { font-size: 12px; color: var(--text-muted); margin-top: 2px; }
+
+  .suggested-badge {
+    font-family: var(--mono);
+    font-size: 10px;
+    background: rgba(240,192,64,.15);
+    color: var(--accent);
+    border: 1px solid var(--accent-dim);
+    padding: 2px 7px;
+    border-radius: 4px;
+    white-space: nowrap;
+  }
+
+  .section-card-body {
+    padding: 14px;
+    border-top: 1px solid var(--border);
+    display: none;
+  }
+  .section-card.enabled .section-card-body { display: block; }
+
+  /* TAG input */
+  .tag-input-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 8px 10px;
+    cursor: text;
+    min-height: 42px;
+    align-items: center;
+    transition: border-color .15s;
+  }
+  .tag-input-wrapper:focus-within { border-color: var(--accent); }
+  .tag-chip {
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    color: var(--text-dim);
+    font-family: var(--mono);
+    font-size: 12px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+  .tag-chip button {
+    background: none; border: none; color: var(--text-muted);
+    cursor: pointer; font-size: 14px; padding: 0; line-height: 1;
+  }
+  .tag-chip button:hover { color: var(--danger); }
+  #tag-input {
+    border: none; background: transparent; color: var(--text);
+    font-family: var(--sans); font-size: 14px;
+    outline: none; min-width: 120px; flex: 1;
+    padding: 0;
+  }
+
+  /* STAT ROWS */
+  .sub-field { margin-bottom: 12px; }
+  .sub-label { font-family: var(--mono); font-size: 11px; color: var(--text-muted); margin-bottom: 4px; }
+  input.small { padding: 7px 10px; font-size: 13px; }
+
+  .stat-row-builder, .list-builder { display: flex; flex-direction: column; gap: 8px; }
+  .stat-item, .list-item {
+    display: flex; gap: 8px; align-items: flex-start;
+  }
+  .stat-item input, .list-item input { flex: 1; }
+  .remove-btn {
+    background: none; border: 1px solid var(--border);
+    color: var(--text-muted); border-radius: 4px;
+    width: 32px; height: 32px; flex-shrink: 0;
+    cursor: pointer; font-size: 16px; display: flex;
+    align-items: center; justify-content: center;
+    margin-top: 6px;
+    transition: all .15s;
+  }
+  .remove-btn:hover { border-color: var(--danger); color: var(--danger); }
+  .add-btn {
+    background: none; border: 1px dashed var(--border);
+    color: var(--text-muted); border-radius: 4px;
+    padding: 7px 12px; cursor: pointer; font-size: 12px;
+    transition: all .15s; text-align: left;
+    font-family: var(--mono);
+  }
+  .add-btn:hover { border-color: var(--accent); color: var(--accent); }
+
+  /* TIMELINE */
+  .timeline-item-builder { background: var(--surface2); border-radius: 6px; padding: 12px; margin-bottom: 8px; }
+  .timeline-item-builder .sub-label { color: var(--accent); }
+
+  /* SELECT */
+  select {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    color: var(--text);
+    font-family: var(--sans);
+    font-size: 13px;
+    padding: 8px 10px;
+    border-radius: 6px;
+    outline: none;
+    width: 100%;
+    transition: border-color .15s;
+  }
+  select:focus { border-color: var(--accent); }
+
+  /* PREVIEW */
+  #preview-box {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 20px;
+    font-family: var(--mono);
+    font-size: 12px;
+    line-height: 1.7;
+    color: var(--text-dim);
+    white-space: pre-wrap;
+    word-break: break-word;
+    max-height: 60vh;
+    overflow-y: auto;
+    margin-bottom: 20px;
+  }
+
+  /* ALERTS */
+  .alert {
+    border-radius: 6px;
+    padding: 12px 14px;
+    margin-bottom: 16px;
+    font-size: 13px;
+    display: flex;
+    gap: 10px;
+    align-items: flex-start;
+  }
+  .alert-info { background: rgba(91,155,213,.1); border: 1px solid rgba(91,155,213,.3); color: var(--info); }
+  .alert-success { background: rgba(76,175,125,.1); border: 1px solid rgba(76,175,125,.3); color: var(--success); }
+
+  /* MOBILE */
+  @media (max-width: 600px) {
+    main { padding: 16px 14px; }
+    .step-desc { font-size: 15px; }
+    header { padding: 0 14px; gap: 8px; }
+    .step-pill { padding: 3px 8px; font-size: 10px; }
+    textarea { min-height: 240px; }
+  }
+
+  /* SCROLLBAR */
+  ::-webkit-scrollbar { width: 6px; }
+  ::-webkit-scrollbar-track { background: var(--bg); }
+  ::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
+
+  .copy-flash { animation: flash .3s ease; }
+  @keyframes flash { 0%,100% { opacity:1; } 50% { opacity:.5; } }
+</style>
+</head>
+<body>
+<div class="app">
+  <header>
+    <div class="logo">// BLOG GENERATOR</div>
+    <div class="step-nav">
+      <div class="step-pill active" data-step="1" onclick="goStep(1)">1 · Testo</div>
+      <div class="step-pill" data-step="2" onclick="goStep(2)">2 · Meta</div>
+      <div class="step-pill" data-step="3" onclick="goStep(3)">3 · Sezioni</div>
+      <div class="step-pill" data-step="4" onclick="goStep(4)">4 · Esporta</div>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- STEP 1: TESTO -->
+    <div class="step active" id="step-1">
+      <div class="step-title">Step 01</div>
+      <div class="step-desc">Incolla o scrivi il tuo articolo</div>
+
+      <div class="field">
+        <label>Contenuto dell'articolo <span>*</span></label>
+        <textarea id="content" placeholder="Scrivi qui il tuo articolo esattamente come lo vuoi pubblicare. Il tuo stile non verrà modificato, solo corretti eventuali errori ortografici." oninput="analyzeContent()"></textarea>
+        <div class="hint" id="content-stats">—</div>
+      </div>
+
+      <div class="btn-row">
+        <button class="btn btn-primary" onclick="goStep(2)">Continua →</button>
+      </div>
+    </div>
+
+    <!-- STEP 2: META -->
+    <div class="step" id="step-2">
+      <div class="step-title">Step 02</div>
+      <div class="step-desc">Metadati del post</div>
+
+      <div class="field">
+        <label>Titolo <span>*</span></label>
+        <input type="text" id="meta-title" placeholder="Il titolo del tuo articolo">
+      </div>
+
+      <div class="field">
+        <label>Sottotitolo</label>
+        <input type="text" id="meta-subtitle" placeholder="Una frase che introduce l'articolo (opzionale)">
+      </div>
+
+      <div class="field">
+        <label>Tag</label>
+        <div class="tag-input-wrapper" onclick="document.getElementById('tag-input').focus()">
+          <div id="tags-container"></div>
+          <input type="text" id="tag-input" placeholder="Scrivi un tag e premi Invio…" onkeydown="handleTagInput(event)">
+        </div>
+        <div class="hint">Premi Invio o virgola per aggiungere un tag</div>
+      </div>
+
+      <div class="btn-row">
+        <button class="btn btn-ghost" onclick="goStep(1)">← Indietro</button>
+        <button class="btn btn-primary" onclick="goStep(3)">Continua →</button>
+      </div>
+    </div>
+
+    <!-- STEP 3: SEZIONI -->
+    <div class="step" id="step-3">
+      <div class="step-title">Step 03</div>
+      <div class="step-desc">Sezioni speciali</div>
+
+      <div class="alert alert-info" id="suggest-alert" style="display:none">
+        <span>💡</span>
+        <span id="suggest-text"></span>
+      </div>
+
+      <div class="section-grid" id="section-grid">
+
+        <!-- STAT CARDS -->
+        <div class="section-card" id="card-stats">
+          <div class="section-card-header" onclick="toggleSection('stats')">
+            <div class="toggle-switch"></div>
+            <div class="section-card-info">
+              <div class="section-card-name">Stat Cards <span id="badge-stats"></span></div>
+              <div class="section-card-desc">Blocco con numeri grandi — statistiche, percentuali, metriche</div>
+            </div>
+          </div>
+          <div class="section-card-body">
+            <div class="field">
+              <label>Posizione nel testo</label>
+              <select id="stats-position">
+                <option value="top">All'inizio (dopo il primo paragrafo)</option>
+                <option value="after-intro">Dopo l'introduzione</option>
+                <option value="custom">Segnaposto nel testo: [STATS]</option>
+              </select>
+            </div>
+            <div class="stat-row-builder" id="stats-builder">
+              <div class="stat-item">
+                <div style="flex:1">
+                  <div class="sub-label">Numero</div>
+                  <input type="text" class="stat-number" placeholder="es. 95%">
+                </div>
+                <div style="flex:2">
+                  <div class="sub-label">Etichetta</div>
+                  <input type="text" class="stat-label-text" placeholder="es. Persone con smartphone">
+                </div>
+                <div style="flex:1">
+                  <div class="sub-label">Colore</div>
+                  <select class="stat-accent">
+                    <option value="">Neutro</option>
+                    <option value="accent-red">Rosso</option>
+                    <option value="accent-amber">Ambra</option>
+                    <option value="accent-blue">Blu</option>
+                    <option value="accent-green">Verde</option>
+                  </select>
+                </div>
+                <button class="remove-btn" onclick="removeStat(this)">×</button>
+              </div>
+            </div>
+            <button class="add-btn" onclick="addStat()">+ Aggiungi statistica</button>
+          </div>
+        </div>
+
+        <!-- TIMELINE -->
+        <div class="section-card" id="card-timeline">
+          <div class="section-card-header" onclick="toggleSection('timeline')">
+            <div class="toggle-switch"></div>
+            <div class="section-card-info">
+              <div class="section-card-name">Timeline <span id="badge-timeline"></span></div>
+              <div class="section-card-desc">Sequenza di passi o fasi — processi, tutorial, storie</div>
+            </div>
+          </div>
+          <div class="section-card-body">
+            <div class="field">
+              <label>Posizione</label>
+              <select id="timeline-position">
+                <option value="auto">Automatica (dopo il secondo paragrafo)</option>
+                <option value="custom">Segnaposto: [TIMELINE]</option>
+              </select>
+            </div>
+            <div id="timeline-builder">
+              <div class="timeline-item-builder">
+                <div class="sub-label">Passo 1</div>
+                <div class="sub-field">
+                  <div class="sub-label">Etichetta data/fase</div>
+                  <input type="text" class="tl-date" placeholder="es. Passo 1" style="width:100%">
+                </div>
+                <div class="sub-field">
+                  <div class="sub-label">Titolo</div>
+                  <input type="text" class="tl-title" placeholder="es. Download e installazione" style="width:100%">
+                </div>
+                <div class="sub-field">
+                  <div class="sub-label">Descrizione</div>
+                  <textarea class="tl-body" placeholder="Testo del passo..." style="min-height:70px;width:100%"></textarea>
+                </div>
+                <div class="sub-field">
+                  <div class="sub-label">Stile</div>
+                  <select class="tl-style" style="width:100%">
+                    <option value="active">Normal (active)</option>
+                    <option value="warning">Attenzione (warning)</option>
+                    <option value="danger">Pericolo (danger)</option>
+                  </select>
+                </div>
+                <button class="remove-btn" style="margin-top:4px" onclick="removeTimelineItem(this)">× Rimuovi passo</button>
+              </div>
+            </div>
+            <button class="add-btn" onclick="addTimelineItem()">+ Aggiungi passo</button>
+          </div>
+        </div>
+
+        <!-- CALLOUT -->
+        <div class="section-card" id="card-callout">
+          <div class="section-card-header" onclick="toggleSection('callout')">
+            <div class="toggle-switch"></div>
+            <div class="section-card-info">
+              <div class="section-card-name">Callout <span id="badge-callout"></span></div>
+              <div class="section-card-desc">Riquadro evidenziato — avvisi, riepiloghi, consigli pratici</div>
+            </div>
+          </div>
+          <div class="section-card-body">
+            <div id="callout-builder">
+              <div class="callout-item" style="background:var(--surface2);border-radius:6px;padding:12px;margin-bottom:8px">
+                <div class="sub-field">
+                  <div class="sub-label">Titolo bold</div>
+                  <input type="text" class="co-title" placeholder="es. Ricapitolando" style="width:100%">
+                </div>
+                <div class="sub-field">
+                  <div class="sub-label">Testo</div>
+                  <textarea class="co-body" placeholder="Testo del callout..." style="min-height:70px;width:100%"></textarea>
+                </div>
+                <div class="sub-field">
+                  <div class="sub-label">Tipo</div>
+                  <select class="co-type" style="width:100%">
+                    <option value="warning">Warning (giallo)</option>
+                    <option value="success">Success (verde)</option>
+                    <option value="info">Info (blu)</option>
+                    <option value="danger">Danger (rosso)</option>
+                  </select>
+                </div>
+                <div class="sub-field">
+                  <div class="sub-label">Posizione</div>
+                  <select class="co-pos" style="width:100%">
+                    <option value="end">Fine articolo</option>
+                    <option value="middle">Metà articolo</option>
+                    <option value="custom">Segnaposto: [CALLOUT]</option>
+                  </select>
+                </div>
+                <button class="remove-btn" style="margin-top:4px" onclick="removeCallout(this)">× Rimuovi</button>
+              </div>
+            </div>
+            <button class="add-btn" onclick="addCallout()">+ Aggiungi callout</button>
+          </div>
+        </div>
+
+        <!-- PULL QUOTE -->
+        <div class="section-card" id="card-pullquote">
+          <div class="section-card-header" onclick="toggleSection('pullquote')">
+            <div class="toggle-switch"></div>
+            <div class="section-card-info">
+              <div classe="nome-carta-sezione">Pull Quote <span id="badge-pullquote"></span></div>
+              <div classe="sezione-scheda-desc">Citazione in evidenza — frase chiave da isolare visivamente</div>
+            </div>
+          </div>
+          <div classe="corpo della scheda di sezione">
+            <div id="pullquote-builder">
+              <div classe="pq-item" stile="background:var(--surface2);border-radius:6px;padding:12px;margin-bottom:8px">
+                <div classe="sottocampo">
+                  <div classe="sottoetichetta">Testo della città</div>
+                  <area di testo classe="testo pq" placeholder="es. Non ci rubano niente. Ci chiedono solo di sapere tutto." style="min-height:70px;width:100%"></textarea>
+                </div>
+                <div classe="sottocampo">
+                  <div classe="sottoetichetta">Posizione</div>
+                  <selezionare classe="pq-pos" stile="width:100%">
+                    <opzione valore="fine">Ottimo articololo</option>
+                    <opzione valore="mezzo">Città Articolo</option>
+                    <opzione valore="personalizzato">Segnaposto: [PULLQUOTE]</option>
+                  </selezionare>
+                </div>
+                <pulsante classe="rimuovi-btn" style="margin-top:4px" onclick="removePullquote(this)">× Rimuovi</button>
+              </div>
+            </div>
+            <pulsante classe="aggiungi-btn" al clic="addPullquote()">+ Citazione pull di Aggiungi</button>
+          </div>
+        </div>
+
+      </div>
+
+      <div classe="btn-row">
+        <pulsante classe="btn btn-fantasma" al clic="goStep(2)">← Indietro</button>
+        <pulsante classe="btn btn-primario" al clic="goStep(4)">Generi anteprima →</button>
+      </div>
+    </div>
+
+    <!-- PASSAGGIO 4: ESPORTA -->
+    <div classe="passo" id="passo 4">
+      <div classe="titolo del passo">Passo 04</div>
+      <div classe="step-desc">Anteprima ed esportazione</div>
+
+      <div id="casella di anteprima"></div>
+
+      <div classe="btn-row">
+        <pulsante classe="btn btn-fantasma" al clic="goStep(3)">← Modifica</button>
+        <pulsante classe="btn btn-successo" al clic="downloadMD()">↓ Scarica .md</button>
+        <pulsante classe="btn btn-fantasma" al clic="copyToClipboard()">⎘ Copia</button>
+      </div>
+    </div>
+
+  </principale>
+</div>
+
+<sceneggiatura>
+// STATO
+costante stato = {
+  currentStep: 1,
+  tag: [],
+  sezioni: { statistiche: falso, cronologia: falso, callout: false, pullquote: false }
+};
+
+// NAVIGAZIONE
+funzione goStep(n) {
+  Se (n === 4) buildPreview();
+  documento.querySelectorAll('.passo').per ciascuno(s => s.classList.remove('active'));
+  documento.getElementById('passo-' + n).classeElenco.add('active');
+  documento.querySelectorAll('.pillola step').forEach(p => {
+    p.classeElenco.rimuovere('attivo');
+    Se (parseInt(p.set di dati.passo) < n) p.classeElenco.add('done');
+    altro p.classeElenco.rimuovere(‘fatto’);
+  });
+  documento.querySelector('[data-step='' + n + '"]').classList.add('active');
+  stato.currentStep = n;
+  finestra.scorrere fino a(0,0);
+}
+
+// CONTENT ANALYSIS
+function analyzeContent() {
+  const txt = document.getElementById('content').value;
+  const words = txt.trim() ? txt.trim().split(/\s+/).length : 0;
+  const chars = txt.length;
+  document.getElementById('content-stats').textContent = `${words} parole · ${chars} caratteri`;
+  suggestSections(txt);
+}
+
+function suggestSections(txt) {
+  const lower = txt.toLowerCase();
+  const suggestions = [];
+  if (/\d+%|\d+ su \d+|statistic|dato|numeri|percentuale|media/.test(lower)) {
+    suggestions.push('stat-cards (ho trovato dati numerici nel testo)');
+    if (!state.sections.stats) showBadge('stats', 'suggerita');
+  } else { hideBadge('stats'); }
+
+  if (/passo \d|step \d|prima di|poi|infine|sequenza|fase|installa|processo/.test(lower)) {
+    suggestions.push('timeline (ho trovato sequenze o passi)');
+    if (!state.sections.timeline) showBadge('timeline', 'suggerita');
+  } else { hideBadge('timeline'); }
+
+  if (/ricapit|riassun|attenzione|nota bene|importante|consiglio|cosa puoi fare/.test(lower)) {
+    suggestions.push('callout (ho trovato riepilogo o avviso)');
+    if (!state.sections.callout) showBadge('callout', 'suggerita');
+  } else { hideBadge('callout'); }
+
+  if (/"[^"]{15,}"/.test(txt) || /'[^']{15,}'/.test(txt)) {
+    suggestions.push('pull-quote (ho trovato una frase tra virgolette)');
+    if (!state.sections.pullquote) showBadge('pullquote', 'suggerita');
+  } else { hideBadge('pullquote'); }
+
+  const alert = document.getElementById('suggest-alert');
+  if (suggestions.length) {
+    alert.style.display = 'flex';
+    document.getElementById('suggest-text').textContent = 'Suggerisco: ' + suggestions.join('; ') + '. Puoi attivarle o ignorarle nel passo 3.';
+  } else {
+    alert.style.display = 'none';
+  }
+}
+
+function showBadge(id, text) {
+  const el = document.getElementById('badge-' + id);
+  if (el) { el.innerHTML = `<span class="suggested-badge">${text}</span>`; }
+}
+function hideBadge(id) {
+  const el = document.getElementById('badge-' + id);
+  if (el && !state.sections[id]) el.innerHTML = '';
+}
+
+// TOGGLE SECTIONS
+function toggleSection(id) {
+  state.sections[id] = !state.sections[id];
+  const card = document.getElementById('card-' + id);
+  card.classList.toggle('enabled', state.sections[id]);
+  if (state.sections[id]) hideBadge(id);
+}
+
+// TAGS
+function handleTagInput(e) {
+  if (e.key === 'Enter' || e.key === ',') {
+    e.preventDefault();
+    const val = e.target.value.trim().replace(/,$/, '');
+    if (val && !state.tags.includes(val)) {
+      state.tags.push(val);
+      renderTags();
+    }
+    e.target.value = '';
+  } else if (e.key === 'Backspace' && !e.target.value && state.tags.length) {
+    state.tags.pop();
+    renderTags();
+  }
+}
+
+function renderTags() {
+  const c = document.getElementById('tags-container');
+  c.innerHTML = state.tags.map((t, i) =>
+    `<div class="tag-chip">${t}<button onclick="removeTag(${i})">×</button></div>`
+  ).join('');
+}
+
+function removeTag(i) {
+  state.tags.splice(i, 1);
+  renderTags();
+}
+
+// STAT BUILDER
+function addStat() {
+  const b = document.getElementById('stats-builder');
+  const div = document.createElement('div');
+  div.className = 'stat-item';
+  div.innerHTML = `
+    <div style="flex:1"><div class="sub-label">Numero</div><input type="text" class="stat-number" placeholder="es. 41"></div>
+    <div style="flex:2"><div class="sub-label">Etichetta</div><input type="text" class="stat-label-text" placeholder="Descrizione"></div>
+    <div style="flex:1"><div class="sub-label">Colore</div><select class="stat-accent"><option value="">Neutro</option><option value="accent-red">Rosso</option><option value="accent-amber">Ambra</option><option value="accent-blue">Blu</option><option value="accent-green">Verde</option></select></div>
+    <button class="remove-btn" onclick="removeStat(this)">×</button>`;
+  b.appendChild(div);
+}
+function removeStat(btn) { btn.closest('.stat-item').remove(); }
+
+// TIMELINE BUILDER
+let tlCount = 1;
+function addTimelineItem() {
+  tlCount++;
+  const b = document.getElementById('timeline-builder');
+  const div = document.createElement('div');
+  div.className = 'timeline-item-builder';
+  div.innerHTML = `
+    <div class="sub-label">Passo ${tlCount}</div>
+    <div class="sub-field"><div class="sub-label">Etichetta</div><input type="text" class="tl-date" placeholder="Passo ${tlCount}" style="width:100%"></div>
+    <div class="sub-field"><div class="sub-label">Titolo</div><input type="text" class="tl-title" placeholder="Titolo del passo" style="width:100%"></div>
+    <div class="sub-field"><div class="sub-label">Descrizione</div><textarea class="tl-body" placeholder="Testo..." style="min-height:70px;width:100%"></textarea></div>
+    <div class="sub-field"><div class="sub-label">Stile</div><select class="tl-style" style="width:100%"><option value="active">Normal</option><option value="warning">Attenzione</option><option value="danger">Pericolo</option></select></div>
+    <button class="remove-btn" style="margin-top:4px" onclick="removeTimelineItem(this)">× Rimuovi passo</button>`;
+  b.appendChild(div);
+}
+function removeTimelineItem(btn) { btn.closest('.timeline-item-builder').remove(); }
+
+// CALLOUT BUILDER
+function addCallout() {
+  const b = document.getElementById('callout-builder');
+  const div = document.createElement('div');
+  div.className = 'callout-item';
+  div.style = 'background:var(--surface2);border-radius:6px;padding:12px;margin-bottom:8px';
+  div.innerHTML = `
+    <div class="sub-field"><div class="sub-label">Titolo bold</div><input type="text" class="co-title" placeholder="Titolo" style="width:100%"></div>
+    <div class="sub-field"><div class="sub-label">Testo</div><textarea class="co-body" placeholder="Testo..." style="min-height:70px;width:100%"></textarea></div>
+    <div class="sub-field"><div class="sub-label">Tipo</div><select class="co-type" style="width:100%"><option value="warning">Warning</option><option value="success">Success</option><option value="info">Info</option><option value="danger">Danger</option></select></div>
+    <div class="sub-field"><div class="sub-label">Posizione</div><select class="co-pos" style="width:100%"><option value="end">Fine articolo</option><option value="middle">Metà</option><option value="custom">Segnaposto [CALLOUT]</option></select></div>
+    <button class="remove-btn" style="margin-top:4px" onclick="removeCallout(this)">× Rimuovi</button>`;
+  b.appendChild(div);
+}
+function removeCallout(btn) { btn.closest('.callout-item').remove(); }
+
+// PULLQUOTE BUILDER
+function addPullquote() {
+  const b = document.getElementById('pullquote-builder');
+  const div = document.createElement('div');
+  div.className = 'pq-item';
+  div.style = 'background:var(--surface2);border-radius:6px;padding:12px;margin-bottom:8px';
+  div.innerHTML = `
+    <div class="sub-field"><div class="sub-label">Citazione</div><textarea class="pq-text" placeholder="La frase..." style="min-height:70px;width:100%"></textarea></div>
+    <div class="sub-field"><div class="sub-label">Posizione</div><select class="pq-pos" style="width:100%"><option value="end">Fine</option><option value="middle">Metà</option><option value="custom">Segnaposto [PULLQUOTE]</option></select></div>
+    <button class="remove-btn" style="margin-top:4px" onclick="removePullquote(this)">× Rimuovi</button>`;
+  b.appendChild(div);
+}
+function removePullquote(btn) { btn.closest('.pq-item').remove(); }
+
+// MD GENERATION
+function buildStats() {
+  const items = document.querySelectorAll('#stats-builder .stat-item');
+  const cards = Array.from(items).map(it => {
+    const num = it.querySelector('.stat-number').value.trim();
+    const lbl = it.querySelector('.stat-label-text').value.trim();
+    const acc = it.querySelector('.stat-accent').value;
+    const cls = acc ? `stat-card ${acc}` : 'stat-card';
+    return `  <div class="${cls}">\n    <div class="stat-number">${num}</div>\n    <div class="stat-label">${lbl}</div>\n  </div>`;
+  }).filter(c => c.includes('stat-number">') && !c.includes('stat-number"></'));
+  if (!cards.length) return '';
+  return `<div class="stat-row">\n${cards.join('\n')}\n</div>`;
+}
+
+function buildTimeline() {
+  const items = document.querySelectorAll('#timeline-builder .timeline-item-builder');
+  const steps = Array.from(items).map(it => {
+    const date = it.querySelector('.tl-date').value.trim();
+    const title = it.querySelector('.tl-title').value.trim();
+    const body = it.querySelector('.tl-body').value.trim();
+    const sty = it.querySelector('.tl-style').value;
+    return `  <div class="timeline-item ${sty}">\n    <div class="timeline-date">${date}</div>\n    <div class="timeline-title">${title}</div>\n    <div class="timeline-body">${body}</div>\n  </div>`;
+  });
+  if (!steps.length) return '';
+  return `<div class="timeline">\n${steps.join('\n')}\n</div>`;
+}
+
+function buildCallouts() {
+  const items = document.querySelectorAll('#callout-builder .callout-item');
+  return Array.from(items).map(it => {
+    const title = it.querySelector('.co-title').value.trim();
+    const body = it.querySelector('.co-body').value.trim();
+    const type = it.querySelector('.co-type').value;
+    const pos = it.querySelector('.co-pos').value;
+    const html = `<div class="callout ${type}">\n  <strong>${title}</strong> ${body}\n</div>`;
+    return { html, pos };
+  });
+}
+
+function buildPullquotes() {
+  const items = document.querySelectorAll('#pullquote-builder .pq-item');
+  return Array.from(items).map(it => {
+    const text = it.querySelector('.pq-text').value.trim();
+    const pos = it.querySelector('.pq-pos').value;
+    const html = `<div class="pull-quote">\n  <p>"${text}"</p>\n</div>`;
+    return { html, pos };
+  });
+}
+
+funzione buildFrontmatter() {
+  costante titolo = documento.getElementById('meta-titolo').value.trim();
+  costante sottotitolo = documento.getElementById('meta-subtitle').value.trim();
+  costante tag = stato.tag;
+  permettere fm = '---\Nlayout: post\N';
+  fm += `titolo: "${titolo}"\N`;
+  Se (sottotitolo) fm += `sottotitolo: "${sottotitolo}"\N`;
+  Se (tag.lunghezza) fm += `tag: [${tag.mappa(t => t).join(', ')}]\N`;
+  fm += '---\N';
+  ritorno fm;
+}
+
+funzione iniettaAtPosition(contenuto, html, posizione, placeholder) {
+  Se (posizione === 'personalizzato') {
+    ritorno contenuto.sostituire(segnaposto, html);
+  }
+  costante paragrafi = contenuto.diviso(/\n---\n|\n\n);
+  Se (posizione === 'in contralto' || posizione === 'dopo l'introduzione') {
+    ritorno html + '\n\n' + contenuto;
+  }
+  Se (posizione === 'medio') {
+    costante metà = Matematica.padiglione(paragrafi.lunghezza / 2);
+    paragrafi.giunzione(metà, 0, html);
+    ritorno paragrafi.unirsi('\n\n');
+  }
+ // BENE
+ ritorno contenuto + '\n\n' + html;
+}
+
+funzione buildFullMD() {
+ permettere contenuto = documento.getElementById('contenuto').value.trim();
+ costante fm = buildFrontmatter();
+
+ // Statistica
+ Se (stato.sezioni.statistica) {
+ costante html = buildStats();
+ Se (html) {
+ posizione costante = documento.getElementById('stats-position').value;
+ contenuto = iniettaAtPosition(contenuto, html, pos, '[STATS]');
+    }
+  }
+
+ // Cronologia
+ Se (stato.sezioni.cronologia) {
+ costante html = buildTimeline();
+ Se (html) {
+ posizione costante = documento.getElementById('timeline-position').value;
+ contenuto = iniettaAtPosition(contenuto, html, pos === 'auto' ? 'after-intro': 'personalizzato', '[TIMELINE]');
+    }
+  }
+
+ // Chiamato
+ Se (stato.sezioni.chiamata) {Se (stato.sezioni.chiamata) {
+ buildCallouts().per ciascuno(({ html, posizione }) => {buildCallouts().per ciascuno(({ html, posizione }) => {
+ contenuto = iniettaAtPosition(contenuto, html, pos, '[CALLOUT]');contenuto = iniettaAtPosition(contenuto, html, posizione, '[CALLOUT]');
+ });});
+  }
+
+ // Estrai virgolette// Estrai virgolette
+ Se (stato.sezioni.pullquote) {Se (stato.sezioni.pullquote) {
+ buildPullquote().per ciascuno(({ html, posizione }) => {buildPullquote().per ciascuno(({ html, posizione }) => {
+ contenuto = iniettaAtPosition(contenuto, html, pos, '[PULLQUOTE]');contenuto = iniettaAtPosition(contenuto, html, posizione, '[PULLQUOTE]');
+ });});
+  }
+
+ ritorno fm + '\N' + contenuto;ritorno fm + '\N' + contenuto;
+}
+
+funzione buildPreview() {buildPreview() {
+ documento.getElementById('casella di anteprima').testoContenuto = buildFullMD();documento.getElementById('casella di anteprima').testoContenuto = buildFullMD();
+}
+
+funzione downloadMD() {downloadMD() {
+ costante md = buildFullMD();costante md = buildFullMD();
+ costante titolo = documento. .getElementById('meta-titolo').value.rifinire() || 'posta';costante titolo = documento.getElementById('meta-titolo').value.trim() || 'post';
+ costante lumaca = titolo.toLowerCase().sostituire(/[^a-z0-9]+/g, '-').sostituire(/^-|-$/g, ');costante lumaca = titolo.toLowerCase().sostituire(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+ costante Oggi = nuovo Dati().toISOString().diviso('T')[0];costante Oggi = nuovo Dati().toISOString().diviso('T')[0];
+ costante nome file = `${Oggi}-${lumaca}. . . . . . .md`;costante nome file = `${Oggi}-${lumaca}. . . . . . .md`;
+ costante macchia = nuovo Macchia([md], { tipo: 'testo/markdown' });
+ costante a = documento.creaElemento('a');
+ a.href = URL.creaObjectURL(macchia);
+ a.scaricare = nome file;
+ a.cliché();
+}
+
+funzione copyToClipboard() {copyToClipboard() {
+ costante md = buildFullMD();
+ navigatore.appunti.scriviTesto(md).Poi(() => {
+ costante BTC = evento.bersaglio;
+ costante originale = BTC.testoContenuto;
+ BTC.testoContenuto = '✓ Copiato!';
+ BTC.classeElenco.aggiungere('copia flash');
+ setTimeout(() => { BTC.testoContenuto = originale; btn.classeElenco.rimuovere('copia flash'); }, 1500);
+ });
+}
+</scenografia>scenografia>
+</corpo>corpo>
+</html>
