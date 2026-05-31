@@ -23,9 +23,7 @@ Eppure ha fatto quello che nessun avvocato, nessun ambientalista, nessun politic
 
 Non perché fosse ricco. Non perché avesse alternative. Ma perché sapeva cosa stava difendendo.
 
-<div class="pull-quote">
-  <p>"Non stava difendendo un investimento. Stava difendendo se stesso."</p>
-</div>
+> Non stava difendendo un investimento. Stava difendendo se stesso.
 
 ---
 
