@@ -283,9 +283,9 @@ code, pre {
   height: 100%;
   background: linear-gradient(
     to bottom,
-    rgba(0, 0, 0, 0.15) 0%,
-    rgba(0, 0, 0, 0.55) 50%,
-    rgba(0, 0, 0, 0.7) 100%
+    rgba(0, 0, 0, 0.45) 0%,
+    rgba(0, 0, 0, 0.65) 50%,
+    rgba(0, 0, 0, 0.75) 100%
   );
   z-index: 1;
 }
@@ -481,7 +481,6 @@ code, pre {
   letter-spacing: 0.05em;
 }
 
-/* FIX: titoli timeline leggibili in light mode */
 .timeline-title {
   font-size: 15px;
   font-weight: 600;
@@ -489,14 +488,12 @@ code, pre {
   margin-bottom: 3px;
 }
 
-/* FIX: corpo timeline leggibile in light mode */
 .timeline-body {
   font-size: 13px;
   color: #4a4a4a;
   line-height: 1.55;
 }
 
-/* Dark mode — timeline */
 [data-theme="dark"] .timeline::before      { background: #444; }
 [data-theme="dark"] .timeline-item::before { background: #1a1a1a; border-color: #555; }
 [data-theme="dark"] .timeline-title        { color: #e8e8e8; }
