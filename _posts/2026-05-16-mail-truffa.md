@@ -3,10 +3,10 @@ layout: post
 title: "Quella mail della tua banca non è della tua banca"
 subtitle: "Come riconoscere una truffa via email in trenta secondi, senza sapere niente di informatica."
 tags: [sicurezza digitale, truffe, phishing, società]
-# cover-img: "/assets/img/.jpg"
-# share-img: "/assets/img/.jpg"
-# thumbnail-img: "/assets/img/.jpg"
+thumbnail-img: "/assets/img/nome-immagine.jpg"
 ---
+
+![](/assets/img/nome-immagine.jpg)
 
 Arriva una mail. Logo della banca, colori giusti, tono ufficiale. Ti dice che il tuo conto è stato bloccato per attività sospette e devi cliccare subito per sbloccare tutto.
 
