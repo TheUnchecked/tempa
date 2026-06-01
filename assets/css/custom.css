@@ -332,16 +332,9 @@ code, pre {
 .stat-card.accent-teal  .stat-number { color: #0f6e56; }
 .stat-card.accent-blue  .stat-number { color: #185fa5; }
 
-/* Dark mode — stat cards */
-@media (prefers-color-scheme: dark) {
-  .stat-card    { background: #2a2a2a; }
-  .stat-number  { color: #e8e8e8; }
-  .stat-label   { color: #888; }
-}
 [data-theme="dark"] .stat-card   { background: #2a2a2a; }
 [data-theme="dark"] .stat-number { color: #e8e8e8; }
 [data-theme="dark"] .stat-label  { color: #888; }
-
 
 /* ============================================
    CALLOUT BOX
@@ -366,18 +359,10 @@ code, pre {
 .callout.info    { background: #e6f1fb; border-color: #378add; color: #042c53; }
 .callout.success { background: #eaf3de; border-color: #639922; color: #173404; }
 
-/* Dark mode — callout */
-@media (prefers-color-scheme: dark) {
-  .callout.danger  { background: #2e1515; border-color: #e24b4a; color: #f7c1c1; }
-  .callout.warning { background: #2e2210; border-color: #ef9f27; color: #fac775; }
-  .callout.info    { background: #0e1e30; border-color: #378add; color: #b5d4f4; }
-  .callout.success { background: #141f08; border-color: #639922; color: #c0dd97; }
-}
 [data-theme="dark"] .callout.danger  { background: #2e1515; border-color: #e24b4a; color: #f7c1c1; }
 [data-theme="dark"] .callout.warning { background: #2e2210; border-color: #ef9f27; color: #fac775; }
 [data-theme="dark"] .callout.info    { background: #0e1e30; border-color: #378add; color: #b5d4f4; }
 [data-theme="dark"] .callout.success { background: #141f08; border-color: #639922; color: #c0dd97; }
-
 
 /* ============================================
    BARRE DI CONFRONTO
@@ -428,16 +413,6 @@ code, pre {
 .bar-fill.blue  { background: #85b7eb; color: #042c53; }
 .bar-fill.gray  { background: #b4b2a9; color: #2c2c2a; }
 
-/* Dark mode — bar chart */
-@media (prefers-color-scheme: dark) {
-  .bar-track          { background: #2a2a2a; }
-  .bar-item-label     { color: #666; }
-  .bar-fill.red       { background: #791f1f; color: #f7c1c1; }
-  .bar-fill.amber     { background: #633806; color: #fac775; }
-  .bar-fill.teal      { background: #085041; color: #9fe1cb; }
-  .bar-fill.blue      { background: #0c447c; color: #b5d4f4; }
-  .bar-fill.gray      { background: #444441; color: #d3d1c7; }
-}
 [data-theme="dark"] .bar-track      { background: #2a2a2a; }
 [data-theme="dark"] .bar-item-label { color: #666; }
 [data-theme="dark"] .bar-fill.red   { background: #791f1f; color: #f7c1c1; }
@@ -446,9 +421,8 @@ code, pre {
 [data-theme="dark"] .bar-fill.blue  { background: #0c447c; color: #b5d4f4; }
 [data-theme="dark"] .bar-fill.gray  { background: #444441; color: #d3d1c7; }
 
-
 /* ============================================
-   TIMELINE
+   TIMELINE — FIX LEGGIBILITÀ LIGHT MODE
    ============================================ */
 .timeline {
   position: relative;
@@ -493,39 +467,33 @@ code, pre {
 
 .timeline-date {
   font-size: 11px;
-  color: #aaa;
+  color: #999;
   margin-bottom: 2px;
   text-transform: uppercase;
   letter-spacing: 0.05em;
 }
 
+/* FIX: titoli timeline leggibili in light mode */
 .timeline-title {
   font-size: 15px;
   font-weight: 600;
-  color: #2d2d2d;
+  color: #1a1a1a;
   margin-bottom: 3px;
 }
 
+/* FIX: corpo timeline leggibile in light mode */
 .timeline-body {
   font-size: 13px;
-  color: #666;
+  color: #4a4a4a;
   line-height: 1.55;
 }
 
 /* Dark mode — timeline */
-@media (prefers-color-scheme: dark) {
-  .timeline::before      { background: #444; }
-  .timeline-item::before { background: #1a1a1a; border-color: #555; }
-  .timeline-title        { color: #e8e8e8; }
-  .timeline-body         { color: #999; }
-  .timeline-date         { color: #666; }
-}
 [data-theme="dark"] .timeline::before      { background: #444; }
 [data-theme="dark"] .timeline-item::before { background: #1a1a1a; border-color: #555; }
 [data-theme="dark"] .timeline-title        { color: #e8e8e8; }
 [data-theme="dark"] .timeline-body         { color: #999; }
 [data-theme="dark"] .timeline-date         { color: #666; }
-
 
 /* ============================================
    CITAZIONE MAGAZINE
@@ -553,14 +521,8 @@ code, pre {
   letter-spacing: 0.05em;
 }
 
-/* Dark mode — pull quote */
-@media (prefers-color-scheme: dark) {
-  .pull-quote   { border-top-color: #e8e8e8; border-bottom-color: #333; }
-  .pull-quote p { color: #e8e8e8; }
-}
 [data-theme="dark"] .pull-quote   { border-top-color: #e8e8e8; border-bottom-color: #333; }
 [data-theme="dark"] .pull-quote p { color: #e8e8e8; }
-
 
 /* ============================================
    TABELLA LEGGIBILE
@@ -596,26 +558,13 @@ article table tr:last-child td {
   border-bottom: none;
 }
 
-/* Dark mode — tabella */
-@media (prefers-color-scheme: dark) {
-  .post-body table th,
-  article table th {
-    background: #2a2a2a;
-    border-bottom-color: #444;
-    color: #e8e8e8;
-  }
-  .post-body table td,
-  article table td {
-    border-bottom-color: #2a2a2a;
-    color: #aaa;
-  }
-}
 [data-theme="dark"] .post-body table th,
 [data-theme="dark"] article table th {
   background: #2a2a2a;
   border-bottom-color: #444;
   color: #e8e8e8;
 }
+
 [data-theme="dark"] .post-body table td,
 [data-theme="dark"] article table td {
   border-bottom-color: #2a2a2a;
