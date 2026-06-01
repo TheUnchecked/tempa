@@ -3,7 +3,6 @@ layout: post
 title: "Quella mail della tua banca non è della tua banca"
 subtitle: 'Come riconoscere una truffa via email in trenta secondi, senza sapere niente di informatica.'
 tags: [sicurezza digitale, truffe, phishing, società]
-thumbnail-img: "assets/img/1780307715092.png"
 ---
 
 ![](assets/img/1780307715092.png)
