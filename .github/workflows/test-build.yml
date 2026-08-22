@@ -1,7 +1,9 @@
 name: Test Jekyll Build
 
 on:
-  workflow_dispatch:
+  push:
+    branches:
+      - workspace-editoriale
 
 jobs:
   build:
