@@ -1,0 +1,30 @@
+name: Test Jekyll Build
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    name: Test build Jekyll
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '3.3'
+          bundler-cache: true
+
+      - name: Install dependencies
+        run: bundle install
+
+      - name: Build Jekyll
+        env:
+          JEKYLL_ENV: production
+        run: bundle exec jekyll build --future --config _config.yml
+
+      - name: Build completed
+        run: echo "Jekyll build completata correttamente."
