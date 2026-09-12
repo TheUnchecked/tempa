@@ -1,17 +1,7 @@
-<nav class="navbar navbar-expand-xl navbar-light fixed-top navbar-custom {% if page.nav-short %}top-nav-short-permanent{% else %}top-nav-regular{% endif %}">
+<nav class="navbar navbar-light navbar-custom">
 
-  {%- if site.title-img -%}
-    <a class="navbar-brand navbar-brand-logo" href="{{ '/' | absolute_url }}"><img alt="{{ site.title }} Logo" src="{{ site.title-img | relative_url}}"/></a>
-  {%- elsif site.title -%}
-    <a class="navbar-brand" href="{{ '/' | absolute_url }}">{{ site.title }}</a>
-  {%- endif -%}
-
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-navbar" aria-controls="main-navbar" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-
-  <div class="collapse navbar-collapse" id="main-navbar">
-    <ul class="navbar-nav ml-auto">
+  <div class="navbar-collapse" id="main-navbar">
+    <ul class="navbar-nav mr-auto">
       {%- for link in site.navbar-links -%}
         {%- if link[1].first %}
           <li class="nav-item dropdown">
@@ -25,47 +15,17 @@
             </div>
           </li>
         {% else %}
-          <li class="nav-item">
+          <li class="nav-item{% if page.url contains link[1] %} active{% endif %}">
             <a class="nav-link" href="{{ link[1] | relative_url }}">{{ link[0] }}</a>
           </li>
         {%- endif -%}
       {%- endfor -%}
-      {% if site.post_search %}
-        <li class="nav-item">
-          <a class="nav-link" id="nav-search-link" href="#" title="Search">
-            <span id="nav-search-icon" class="fa fa-search"></span>
-            <span id="nav-search-text">Search</span>
-          </a>
-        </li>
-      {%- endif -%}
-
-      <!-- DARK MODE TOGGLE -->
-      <li class="nav-item">
-        <button id="theme-toggle" class="theme-toggle" aria-label="Cambia tema">
-          <span class="icon-moon">&#9789;</span>
-          <span class="icon-sun">&#9788;</span>
-        </button>
-      </li>
-
     </ul>
+
+    <button id="theme-toggle" class="theme-toggle" aria-label="Cambia tema">
+      <span class="icon-moon">&#9789;</span>
+      <span class="icon-sun">&#9788;</span>
+    </button>
   </div>
 
-  {% if site.navbar-extra %}
-    {% for file in site.navbar-extra %}
-      {% include {{ file }} %}
-    {% endfor %}
-  {% endif %}
-
-  {% if site.avatar and page.show-avatar != false %}
-    <div class="avatar-container">
-      <div class="avatar-img-border">
-        <a href="{{ '/' | absolute_url }}">
-          <img alt="Navigation bar avatar" class="avatar-img" src="{{ site.avatar | relative_url }}" />
-        </a>
-      </div>
-    </div>
-  {% endif %}
-
 </nav>
-
-{% include search.html %}

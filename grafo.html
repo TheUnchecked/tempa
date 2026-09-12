@@ -8,16 +8,11 @@ subtitle: "Le connessioni tra gli articoli"
   #graph-container {
     width: 100%;
     height: 600px;
-    border: 1px solid #e0e0e0;
-    border-radius: 12px;
-    background: var(--graph-bg, #fafafa);
+    border: 1px solid var(--tempa-border);
+    border-radius: var(--tempa-radius);
+    background: var(--superficie);
     overflow: hidden;
     position: relative;
-  }
-
-  .dark-mode #graph-container {
-    background: #1a1a1a;
-    border-color: #333;
   }
 
   #graph-container svg {
@@ -32,24 +27,17 @@ subtitle: "Le connessioni tra gli articoli"
   }
 
   .node text {
+    font-family: var(--header-font);
+    font-stretch: 78%;
     font-size: 12px;
-    font-family: inherit;
     pointer-events: none;
-    fill: #333;
-  }
-
-  .dark-mode .node text {
-    fill: #ddd;
+    fill: var(--tempa-text);
   }
 
   .link {
-    stroke: #ccc;
+    stroke: var(--tempa-border);
     stroke-opacity: 0.7;
     stroke-width: 1.5px;
-  }
-
-  .dark-mode .link {
-    stroke: #444;
   }
 
   .node circle:hover {
@@ -59,29 +47,22 @@ subtitle: "Le connessioni tra gli articoli"
   #graph-legend {
     margin-top: 1rem;
     font-size: 0.85rem;
-    color: #888;
-    text-align: center;
+    color: var(--tempa-muted);
   }
 
   #tooltip {
     position: absolute;
-    background: white;
-    border: 1px solid #ddd;
+    background: var(--tempa-bg);
+    border: 1px solid var(--tempa-border);
     border-radius: 8px;
     padding: 8px 12px;
     font-size: 13px;
+    color: var(--tempa-text);
     pointer-events: none;
     opacity: 0;
     transition: opacity 0.2s;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
     max-width: 200px;
     z-index: 10;
-  }
-
-  .dark-mode #tooltip {
-    background: #2a2a2a;
-    border-color: #444;
-    color: #ddd;
   }
 </style>
 
@@ -94,48 +75,63 @@ subtitle: "Le connessioni tra gli articoli"
   Clicca su un nodo per aprire l'articolo &nbsp;·&nbsp; Trascina per esplorare
 </div>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.8.5/d3.min.js"></script>
+<script src="{{ '/assets/vendor/d3/d3.min.js' | relative_url }}"></script>
 
 <script>
-  // ── Dati del grafo ──────────────────────────────────────────────────────────
-  // Aggiorna questo oggetto ogni volta che aggiungi un articolo o un link nuovo
+  // ── Dati del grafo, generati da site.posts ─────────────────────────────────
+  {% assign posts = site.posts %}
   const graphData = {
     nodes: [
+      {% for post in posts %}
       {
-        id: "mail-truffa",
-        label: "NON aprire le mail!",
-        url: "/tempa/2026-05-16-mail-truffa/",
-        tags: ["sicurezza digitale", "phishing"],
+        id: "post-{{ forloop.index0 }}",
+        label: {{ post.title | strip_html | jsonify }},
+        url: "{{ post.url | relative_url }}",
+        tags: {{ post.tags | jsonify }},
         size: 18
-      },
-      {
-        id: "truffe-whatsapp",
-        label: "NON rispondere su WhatsApp!",
-        url: "/tempa/2026-05-26-truffe-whatsapp/",
-        tags: ["sicurezza digitale", "whatsapp"],
-        size: 18
-      }
+      }{% unless forloop.last %},{% endunless %}
+      {% endfor %}
     ],
     links: [
-      { source: "mail-truffa", target: "truffe-whatsapp" },
-      { source: "truffe-whatsapp", target: "mail-truffa" }
+      {% capture links_raw %}
+      {% for post in posts %}
+        {% assign i = forloop.index0 %}
+        {% for other in posts %}
+          {% assign j = forloop.index0 %}
+          {% if j > i %}
+            {% assign shared = false %}
+            {% for tag in post.tags %}
+              {% if other.tags contains tag %}{% assign shared = true %}{% endif %}
+            {% endfor %}
+            {% if shared %}{ source: "post-{{ i }}", target: "post-{{ j }}" }|||{% endif %}
+          {% endif %}
+        {% endfor %}
+      {% endfor %}
+      {% endcapture %}
+      {% assign links_array = links_raw | strip | split: "|||" %}
+      {% for l in links_array %}{{ l | strip }}{% unless forloop.last %},{% endunless %}
+      {% endfor %}
     ]
   };
 
-  // ── Colori per tag ──────────────────────────────────────────────────────────
-  const tagColors = {
-    "sicurezza digitale": "#e07b54",
-    "phishing":           "#5b8dd9",
-    "whatsapp":           "#4caf7d",
-    "società":            "#9c6fde",
-    "default":            "#aaaaaa"
-  };
+  // ── Colori per etichetta, assegnati da una tavolozza fissa ──────────────────
+  const tavolozza = ["#e07b54", "#5b8dd9", "#4caf7d", "#9c6fde", "#d3a23a", "#4d9aa8"];
+  const coloriEtichette = {};
+  let indiceColore = 0;
+  graphData.nodes.forEach(function (nodo) {
+    (nodo.tags || []).forEach(function (tag) {
+      if (!(tag in coloriEtichette)) {
+        coloriEtichette[tag] = tavolozza[indiceColore % tavolozza.length];
+        indiceColore++;
+      }
+    });
+  });
 
-  function nodeColor(node) {
-    for (const tag of (node.tags || [])) {
-      if (tagColors[tag]) return tagColors[tag];
+  function coloreNodo(nodo) {
+    for (const tag of (nodo.tags || [])) {
+      if (coloriEtichette[tag]) return coloriEtichette[tag];
     }
-    return tagColors["default"];
+    return "#aaaaaa";
   }
 
   // ── Setup SVG ───────────────────────────────────────────────────────────────
@@ -199,8 +195,8 @@ subtitle: "Le connessioni tra gli articoli"
 
   node.append("circle")
     .attr("r", d => d.size)
-    .attr("fill", d => nodeColor(d))
-    .attr("stroke", d => d3.color(nodeColor(d)).darker(0.5));
+    .attr("fill", d => coloreNodo(d))
+    .attr("stroke", d => d3.color(coloreNodo(d)).darker(0.5));
 
   node.append("text")
     .attr("dy", d => d.size + 14)

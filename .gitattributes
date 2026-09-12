@@ -40,6 +40,8 @@ Dockerfile text eol=lf
 *.ttf binary
 *.eof binary
 *.eot binary
+*.woff binary
+*.woff2 binary
 *.swf binary
 *.mov binary
 *.mp4 binary

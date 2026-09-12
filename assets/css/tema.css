@@ -25,6 +25,9 @@ html[data-theme="dark"] {
   --tempa-danger: #f08a80;
   --tempa-success: #6fc39a;
   --tempa-info: #7fb0d8;
+
+  --collina: #3d4245;
+  --superficie: #1e2225;
 }
 
 html[data-theme="dark"] body {

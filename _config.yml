@@ -18,18 +18,26 @@ language: it
 # --- Menu ---
 navbar-links:
   Etichette: "tags"
+  Grafo: "grafo"
   Chi sono: "aboutme"
 
 # --- CSS e JS ---
 site-css:
+  - "/assets/vendor/fonts/fonts.css"
   - "/assets/css/custom.css"
   - "/assets/css/tema.css"
 
 site-js:
   - "/assets/js/theme-toggle.js"
 
-# --- Script nel <head> per il tema (evita il lampo bianco) ---
 defaults:
+  # Tempo di lettura attivo per tutti gli articoli
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      readtime: true
+  # Script nel <head> per il tema (evita il lampo bianco)
   - scope:
       path: ""
     values:
@@ -87,4 +95,3 @@ exclude:
   - Appraisals
   - beautiful-jekyll-theme.gemspec
   - staticman.yml
-  - assets/css/custom-old.css
