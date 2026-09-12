@@ -3,7 +3,7 @@
 # _config.yml
 # ============================================
 
-# --- URL (obbligatori per GitHub Pages project site) ---
+# --- URL ---
 url: "https://theunchecked.github.io"
 baseurl: "/tempa"
 
@@ -13,39 +13,45 @@ favicon: "/favicon.ico"
 title: Tempa
 description: "Pensieri controvento."
 author: Dino
+language: it
 
-# --- Navbar ---
+# --- Menu ---
 navbar-links:
-  About: "aboutme"
+  Etichette: "tags"
+  Chi sono: "aboutme"
 
-# --- CSS e JS custom ---
+# --- CSS e JS ---
 site-css:
   - "/assets/css/custom.css"
+  - "/assets/css/tema.css"
 
 site-js:
   - "/assets/js/theme-toggle.js"
 
-# --- Social (togli il # e scrivi il tuo username per attivare) ---
+# --- Script nel <head> per il tema (evita il lampo bianco) ---
+defaults:
+  - scope:
+      path: ""
+    values:
+      head-extra:
+        - tema-head.html
+
+# --- Social (togli il # per attivare) ---
 social-networks:
   # github: TheUnchecked
-  # linkedin: tuousername
-  # instagram: tuousername
 
-# --- Colori (tema light — il dark è gestito dal CSS) ---
-navbar-col: "#ffffff"
-navbar-text-col: "#404040"
-navbar-border-col: "#f0f0f0"
-footer-col: "#ffffff"
-footer-text-col: "#888888"
-footer-link-col: "#606060"
-footer-hover-col: "#000000"
-page-col: "#ffffff"
-text-col: "#2d2d2d"
-link-col: "#606060"
-hover-col: "#000000"
-
-# --- Avatar (togli il # per attivare) ---
-# avatar: "/assets/img/foto.jpg"
+# --- Colori (tema chiaro; lo scuro è in tema.css) ---
+navbar-col: "#fbfbf9"
+navbar-text-col: "#1f2326"
+navbar-border-col: "#dcdbd5"
+footer-col: "#fbfbf9"
+footer-text-col: "#5c605f"
+footer-link-col: "#a3261b"
+footer-hover-col: "#7d1c14"
+page-col: "#fbfbf9"
+text-col: "#1f2326"
+link-col: "#a3261b"
+hover-col: "#7d1c14"
 
 # --- Paginazione ---
 paginate: 8
@@ -57,7 +63,7 @@ share-links-active:
   facebook: false
   linkedin: false
 
-# --- Impostazioni avanzate (non toccare) ---
+# --- Impostazioni avanzate ---
 markdown: kramdown
 highlighter: rouge
 permalink: /:year-:month-:day-:title/
@@ -74,3 +80,11 @@ exclude:
   - CNAME
   - Gemfile
   - Gemfile.lock
+  - Tools
+  - editorial
+  - CHANGELOG.md
+  - screenshot.png
+  - Appraisals
+  - beautiful-jekyll-theme.gemspec
+  - staticman.yml
+  - assets/css/custom-old.css
