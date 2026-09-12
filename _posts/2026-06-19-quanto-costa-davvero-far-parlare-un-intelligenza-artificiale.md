@@ -26,7 +26,7 @@ E i prezzi, tra un modello e l'altro, non sono lontanamente paragonabili.
   </div>
 </div>
 
-Numeri che, se gestisci un servizio che usa l'IA ogni giorno — un chatbot, un plugin, uno strumento interno — fanno la differenza tra un progetto sostenibile e uno che ti prosciuga il budget in un mese.
+Numeri che, se gestisci un servizio che usa l'IA ogni giorno — un chatbot, un plugin, un tool interno — fanno la differenza tra un progetto sostenibile e uno che ti prosciuga il budget in un mese.
 
 ---
 
@@ -65,7 +65,7 @@ Ho messo insieme i listini dei produttori più usati. I prezzi sono per milione 
 
 <div class="callout warning">
   <strong>Attenzione</strong>
-  Questi numeri cambiano in continuazione — nuovi modelli arrivano, i listini si aggiornano, qualcuno taglia i prezzi per guadagnare quota di mercato. Prima di basarci un budget, vai sempre a controllare il listino ufficiale del fornitore.
+  Questi numeri cambiano in continuazione — nuovi modelli arrivano, i listini si aggiornano, qualcuno taglia i prezzi per guadagnare quota di mercato. Prima di basarci un budget, vai sempre a controllare il listino ufficiale del provider.
 </div>
 
 ---
@@ -104,11 +104,11 @@ Non serve per forza cambiare modello per risparmiare. Ci sono leve che si posson
 
 **Limitare la lunghezza della risposta** — se non ti serve un papiro, dillo al modello. Tagliare l'output massimo da 500 a 200 token può tagliare il costo di output del 60%.
 
-**Memoria del contesto** — se mandi spesso lo stesso documento o lo stesso contesto, molte piattaforme permettono di tenerlo in memoria invece di pagarlo ogni volta da zero.
+**Caching del contesto** — se mandi spesso lo stesso documento o lo stesso contesto, molte piattaforme permettono di metterlo in cache invece di pagarlo ogni volta da zero.
 
-**Instradamento intelligente** — non tutte le richieste sono uguali. Le domande semplici possono andare a un modello economico, quelle complesse a uno più potente. Un sistema che smista così il traffico può tagliare i costi anche del 60%, mantenendo la qualità dove serve davvero.
+**Model routing** — non tutte le richieste sono uguali. Le domande semplici possono andare a un modello economico, quelle complesse a uno più potente. Un sistema che smista così il traffico può tagliare i costi anche del 60%, mantenendo la qualità dove serve davvero.
 
-**Elaborazione a lotti** — se le risposte non servono in tempo reale, molte interfacce offrono sconti importanti (anche il 50%) per chi accetta di aspettare qualche ora in cambio di un prezzo più basso.
+**Elaborazione in batch** — se le risposte non servono in tempo reale, molte API offrono sconti importanti (anche il 50%) per chi accetta di aspettare qualche ora in cambio di un prezzo più basso.
 
 <div class="callout success">
   <strong>La regola pratica</strong>
