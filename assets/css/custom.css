@@ -25,6 +25,20 @@
   --tempa-radius: 10px;
   --tempa-radius-small: 7px;
   --tempa-content-width: 760px;
+
+  /* Collina e superficie: elemento grafico e sfondi delle "stanze" del sito */
+  --collina: #c9c7bf;
+  --superficie: #f0f0ec;
+
+  /* Caratteri: Literata per il testo, Archivo (larghezza stretta) per titoli e menu */
+  --body-font: 'Literata Variable', Georgia, 'Times New Roman', serif;
+  --header-font: 'Archivo Variable', 'Archivo Narrow', Arial, sans-serif;
+}
+
+/* Archivo Variable supporta l'asse della larghezza: lo teniamo stretto ovunque.
+   Su Literata (senza quell'asse) la proprietà non ha alcun effetto. */
+html {
+  font-stretch: 78%;
 }
 
 
@@ -97,6 +111,7 @@
   line-height: 1;
   font-weight: 800;
   letter-spacing: -0.04em;
+  color: var(--tempa-accent);
 }
 
 .stat-label {
@@ -144,8 +159,7 @@
 
 .stat-hero .stat-label {
   font-size: 0.95rem;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.03em;
 }
 
 
@@ -212,8 +226,7 @@
   color: var(--tempa-muted);
   font-size: 0.75rem;
   font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.03em;
 }
 
 .timeline-title {
@@ -246,8 +259,7 @@
   display: block;
   margin-bottom: 0.45rem;
   font-size: 0.85rem;
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
+  letter-spacing: 0.03em;
 }
 
 .callout.warning {
@@ -337,21 +349,18 @@
 
 
 /* =========================================================
-   11. SOURCES
+   11. FONTI
    ========================================================= */
 
-.post-container h2:last-of-type {
+.fonti {
   margin-top: 3rem;
-}
-
-.post-container h2:last-of-type + ul {
   padding-left: 1.2rem;
   color: var(--tempa-muted);
   font-size: 0.9rem;
   line-height: 1.55;
 }
 
-.post-container h2:last-of-type + ul a {
+.fonti a {
   color: inherit;
 }
 
@@ -410,59 +419,259 @@
 
 
 /* =========================================================
-   13. DARK MODE
+   13. MENU
    ========================================================= */
 
-body.dark-mode,
-.dark-mode {
-  --tempa-bg: #171717;
-  --tempa-surface: #222222;
-  --tempa-surface-strong: #2b2b2b;
-  --tempa-text: #eeeeee;
-  --tempa-muted: #aaaaaa;
-  --tempa-border: #3b3b3b;
-
-  background-color: var(--tempa-bg);
-  color: var(--tempa-text);
+.navbar-custom {
+  position: static;
+  padding: 1rem 0;
 }
 
-.dark-mode .stat-card,
-.dark-mode .stat-hero,
-.dark-mode .timeline-item,
-.dark-mode .callout {
-  background: var(--tempa-surface);
-  border-color: var(--tempa-border);
+.navbar-custom .navbar-collapse {
+  display: flex !important;
+  flex-basis: auto;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
 }
 
-.dark-mode .timeline::before {
-  background: var(--tempa-border);
+.navbar-custom .navbar-nav {
+  flex-direction: row;
+  flex-wrap: wrap;
 }
 
-.dark-mode .timeline-item::before {
-  background: var(--tempa-bg);
+.navbar-custom .navbar-nav .nav-item {
+  text-transform: none;
 }
 
-.dark-mode .pull-quote {
-  border-color: var(--tempa-text);
+.navbar-custom .navbar-nav .nav-link {
+  padding: 0.35rem 1rem 0.35rem 0;
 }
 
-.dark-mode .stat-label,
-.dark-mode .timeline-date {
-  color: var(--tempa-muted);
+.navbar-custom .nav-item.active .nav-link {
+  text-decoration: underline;
+  text-decoration-color: var(--link-col);
+  text-decoration-thickness: 2px;
+  text-underline-offset: 4px;
 }
 
-.dark-mode .post-container th {
-  background: var(--tempa-surface-strong);
-}
-
-.dark-mode .post-container th,
-.dark-mode .post-container td {
-  border-color: var(--tempa-border);
+.intro-header,
+.intro-header.big-img {
+  margin: 1.5rem 0 1.25rem;
 }
 
 
 /* =========================================================
-   14. ACCESSIBILITY
+   14. TESTATA DELLA PAGINA PRINCIPALE
+   ========================================================= */
+
+.site-hero {
+  padding: 1rem 0 0.5rem;
+  text-align: left;
+}
+
+.site-hero h1 {
+  margin: 0;
+  font-family: var(--header-font);
+  font-weight: 800;
+  font-size: 3.5rem;
+  line-height: 1.05;
+}
+
+.site-hero .site-subtitle {
+  display: block;
+  margin-top: 0.7rem;
+  font-family: var(--body-font);
+  font-style: italic;
+  font-size: 1.15rem;
+  color: var(--tempa-muted);
+}
+
+.site-hero .collina {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin-top: 1.75rem;
+}
+
+@media (min-width: 700px) {
+  .site-hero h1 {
+    font-size: 4.5rem;
+  }
+}
+
+
+/* =========================================================
+   15. ELENCO ARTICOLI
+   ========================================================= */
+
+.post-list {
+  margin: 1.5rem 0 2rem;
+}
+
+.post-list-item {
+  padding: 1.6rem 0;
+  border-bottom: 1px solid var(--tempa-border);
+}
+
+.post-list-item:first-child {
+  padding-top: 0;
+}
+
+.post-list-meta {
+  display: block;
+  font-family: var(--header-font);
+  font-size: 0.85rem;
+  color: var(--tempa-muted);
+}
+
+.post-list-title {
+  margin: 0.3rem 0 0.2rem;
+  font-size: 1.6rem;
+  line-height: 1.25;
+}
+
+.post-list-title a {
+  color: var(--tempa-text);
+  text-decoration: none;
+}
+
+.post-list-title a:hover,
+.post-list-title a:focus {
+  color: var(--link-col);
+}
+
+.post-list-subtitle {
+  margin: 0 0 0.7rem;
+  font-family: var(--body-font);
+  font-style: italic;
+  font-weight: 400;
+  font-size: 1.05rem;
+  color: var(--tempa-muted);
+}
+
+.post-list-excerpt {
+  margin: 0 0 0.7rem;
+  color: var(--tempa-text);
+}
+
+.post-list-tags {
+  font-family: var(--header-font);
+  font-size: 0.85rem;
+  color: var(--tempa-muted);
+}
+
+.post-list-tags a {
+  color: inherit;
+}
+
+
+/* =========================================================
+   16. PAGINAZIONE E NAVIGAZIONE TRA ARTICOLI
+   ========================================================= */
+
+.pagination .page-item .page-link {
+  text-transform: none;
+  letter-spacing: 0.02em;
+  box-shadow: none;
+}
+
+.post-nav-title {
+  display: block;
+  font-family: var(--body-font);
+  font-style: normal;
+  text-transform: none;
+  font-weight: 700;
+  font-size: 0.95rem;
+  letter-spacing: 0;
+  margin-top: 0.2rem;
+}
+
+
+/* =========================================================
+   17. TESTATA DELL'ARTICOLO
+   ========================================================= */
+
+.post-heading .post-meta {
+  font-family: var(--header-font);
+  color: var(--tempa-muted);
+}
+
+.post-heading .post-subheading {
+  font-style: italic;
+}
+
+.post-hill {
+  display: block;
+  width: 100%;
+  max-width: 320px;
+  height: auto;
+  margin: 1rem 0 0.5rem;
+}
+
+
+/* =========================================================
+   18. PIÈ DI PAGINA
+   ========================================================= */
+
+.site-footer {
+  padding: 1.75rem 0;
+  border-top: 1px solid var(--tempa-border);
+  margin-top: 3rem;
+  font-family: var(--header-font);
+  font-size: 0.9rem;
+  color: var(--tempa-muted);
+}
+
+.site-footer-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.site-footer a {
+  color: var(--footer-link-col);
+}
+
+.site-footer a:hover,
+.site-footer a:focus {
+  color: var(--footer-hover-col);
+}
+
+.site-footer-credit {
+  margin-top: 0.5rem;
+  font-size: 0.8rem;
+}
+
+
+/* =========================================================
+   19. ETICHETTE (tags.html)
+   ========================================================= */
+
+.tags-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.tags-list li {
+  padding: 0.5rem 0;
+  border-bottom: 1px solid var(--tempa-border);
+}
+
+.tags-list a {
+  font-family: var(--header-font);
+}
+
+.tags-list .tag-count {
+  color: var(--tempa-muted);
+}
+
+
+/* =========================================================
+   20. ACCESSIBILITY
    ========================================================= */
 
 @media (prefers-reduced-motion: reduce) {
