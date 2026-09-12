@@ -72,4 +72,61 @@ Ho messo insieme i listini dei produttori più usati. I prezzi sono per milione 
 
 ## Un esempio concreto: il chatbot di assistenza
 
-Mettiamo il caso di un servizio clienti automatizzato con 10.000 conversazioni al giorno, in media 200 token di domanda e 100 token di risposta. Su un mese di lavoro (ci
+Mettiamo il caso di un servizio clienti automatizzato con 10.000 conversazioni al giorno, in media 200 token di domanda e 100 token di risposta. Su un mese di lavoro (circa 22 giorni), il conto cambia radicalmente a seconda del modello scelto:
+
+<div class="timeline">
+  <div class="timeline-item danger">
+    <div class="timeline-date">Top di gamma</div>
+    <div class="timeline-title">Modello premium (es. Claude Opus)</div>
+    <div class="timeline-body">Circa 770 $ al mese. Qualità altissima, ma per un compito semplice come rispondere a domande standard è decisamente sovradimensionato.</div>
+  </div>
+  <div class="timeline-item warning">
+    <div class="timeline-date">Compromesso</div>
+    <div class="timeline-title">Modello bilanciato (es. Mistral Medium)</div>
+    <div class="timeline-body">Circa 30 $ al mese. Qualità più che sufficiente per la maggior parte delle richieste di assistenza.</div>
+  </div>
+  <div class="timeline-item active">
+    <div class="timeline-date">Budget</div>
+    <div class="timeline-title">Modello economico (es. GPT-4o-mini o simili)</div>
+    <div class="timeline-body">Meno di 20 $ al mese. Per un chatbot che risponde a domande frequenti, spesso è più che sufficiente.</div>
+  </div>
+</div>
+
+Stessa funzione, stesso volume di traffico, costo che varia di **40 volte**. La domanda giusta non è "qual è il modello migliore", ma "qual è il modello giusto per quello che devo fare".
+
+---
+
+## Come abbassare il conto senza abbassare la qualità
+
+Non serve per forza cambiare modello per risparmiare. Ci sono leve che si possono attivare prima, a parità di IA usata:
+
+**Prompt più snelli** — un prompt di sistema scritto in modo prolisso può facilmente dimezzarsi senza perdere efficacia. Meno token in entrata, meno spesa, ogni singola volta.
+
+**Limitare la lunghezza della risposta** — se non ti serve un papiro, dillo al modello. Tagliare l'output massimo da 500 a 200 token può tagliare il costo di output del 60%.
+
+**Memoria del contesto** — se mandi spesso lo stesso documento o lo stesso contesto, molte piattaforme permettono di tenerlo in memoria invece di pagarlo ogni volta da zero.
+
+**Instradamento intelligente** — non tutte le richieste sono uguali. Le domande semplici possono andare a un modello economico, quelle complesse a uno più potente. Un sistema che smista così il traffico può tagliare i costi anche del 60%, mantenendo la qualità dove serve davvero.
+
+**Elaborazione a lotti** — se le risposte non servono in tempo reale, molte interfacce offrono sconti importanti (anche il 50%) per chi accetta di aspettare qualche ora in cambio di un prezzo più basso.
+
+<div class="callout success">
+  <strong>La regola pratica</strong>
+  Usa i modelli di punta solo dove la qualità della risposta incide davvero sul risultato (codice, analisi, decisioni). Per tutto il resto — classificazione, risposte standard, elaborazione di massa — un modello economico fa lo stesso lavoro a una frazione del prezzo.
+</div>
+
+---
+
+## La domanda che rimane
+
+<div class="pull-quote">
+  <p>"Non è l'intelligenza artificiale a costare cara. È usarla senza pensarci."</p>
+</div>
+
+Prima di scegliere un modello per il tuo progetto, fatti due conti veri: quanti token consuma in media una richiesta, quante richieste al giorno, e quanto sei disposto a pagare per la qualità in più che ti dà un modello premium. Spesso la risposta sorprende.
+
+---
+
+## Fonti
+
+Questo articolo prende spunto dal confronto prezzi pubblicato da **DeployBase**, [LLM Token Cost Comparison](https://deploybase.ai/articles/llm-token-cost-comparison). Per i numeri aggiornati al momento in cui leggi, conviene comunque controllare i listini ufficiali di Anthropic, OpenAI, Google, Mistral, Cohere e DeepSeek, perché in questo settore i prezzi cambiano alla velocità della luce.
