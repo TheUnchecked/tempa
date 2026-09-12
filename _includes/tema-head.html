@@ -1,0 +1,13 @@
+<script>
+(function () {
+  var chiave = 'tempa-tema';
+  var salvato = null;
+  try { salvato = localStorage.getItem(chiave); } catch (e) {}
+  var scuro = salvato
+    ? salvato === 'dark'
+    : window.matchMedia('(prefers-color-scheme: dark)').matches;
+  if (scuro) {
+    document.documentElement.setAttribute('data-theme', 'dark');
+  }
+})();
+</script>
