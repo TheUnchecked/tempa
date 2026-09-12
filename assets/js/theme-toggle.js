@@ -1,30 +1,30 @@
-// ============================================
-// CORRENTE — Dark Mode Toggle
-// ============================================
+// Tempa — pulsante del tema
 (function () {
-  const STORAGE_KEY = 'corrente-theme';
+  var chiave = 'tempa-tema';
 
-  // Applica il tema salvato SUBITO (evita flash bianco)
-  const saved = localStorage.getItem(STORAGE_KEY);
-  if (saved) {
-    document.documentElement.setAttribute('data-theme', saved);
+  function aggiornaEtichetta(btn) {
+    var scuro = document.documentElement.getAttribute('data-theme') === 'dark';
+    var testo = scuro ? 'Passa al tema chiaro' : 'Passa al tema scuro';
+    btn.setAttribute('aria-label', testo);
+    btn.setAttribute('title', testo);
   }
 
   document.addEventListener('DOMContentLoaded', function () {
-    const btn = document.getElementById('theme-toggle');
+    var btn = document.getElementById('theme-toggle');
     if (!btn) return;
+    aggiornaEtichetta(btn);
 
     btn.addEventListener('click', function () {
-      const current = document.documentElement.getAttribute('data-theme');
-      const next = current === 'dark' ? 'light' : 'dark';
-
-      if (next === 'light') {
+      var scuro = document.documentElement.getAttribute('data-theme') === 'dark';
+      if (scuro) {
         document.documentElement.removeAttribute('data-theme');
       } else {
         document.documentElement.setAttribute('data-theme', 'dark');
       }
-
-      localStorage.setItem(STORAGE_KEY, next);
+      try {
+        localStorage.setItem(chiave, scuro ? 'light' : 'dark');
+      } catch (e) {}
+      aggiornaEtichetta(btn);
     });
   });
 })();
