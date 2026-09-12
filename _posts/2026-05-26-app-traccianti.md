@@ -41,7 +41,7 @@ Prendiamo un'app che ho installato nel mio telefono e che usiamo in famiglia per
 <div class="timeline">
   <div class="timeline-item active">
     <div class="timeline-date">Passo 1</div>
-    <div class="timeline-title">Scaricamento e installazione</div>
+    <div class="timeline-title">Download e installazione</div>
     <div class="timeline-body">Pochi leggono cosa c'è scritto nei dettagli prima di scaricare. Ci pensiamo dopo — ma il "dopo" non arriva mai.</div>
   </div>
   <div class="timeline-item warning">
@@ -60,7 +60,7 @@ Prendiamo un'app che ho installato nel mio telefono e che usiamo in famiglia per
 
 ## Vuoi vedere davvero cosa succede?
 
-Quasi tutte le applicazioni comunicano con il produttore o con lo store 24 ore su 24, con un segnale costante che verifica di essere sempre in linea e collegato. Viene spacciato come "normale" — serve per installare aggiornamenti e raccogliere dati di diagnostica.
+Quasi tutte le applicazioni comunicano con il produttore o con lo store 24 ore su 24, con un segnale costante che verifica di essere sempre online e collegato. Viene spacciato come "normale" — serve per installare aggiornamenti e raccogliere dati di diagnostica.
 
 Ma la realtà è diversa. Viene fatto anche — e soprattutto — per costruire le identità digitali di cui ti parlavo all'inizio.
 
@@ -70,13 +70,13 @@ Ma la realtà è diversa. Viene fatto anche — e soprattutto — per costruire 
 
 Una piccola nota tecnica, ma non troppo.
 
-I traccianti sono elementi software, in genere mascherati da strumenti di analisi o pubblicità, che attivano meccanismi di monitoraggio **capaci di seguire il comportamento degli utenti in rete**. Non sono installati solo nelle app — li trovi nei browser, nelle televisioni intelligenti, nelle Alexa, ovunque.
+I traccianti sono elementi software, in genere mascherati da strumenti di analytics o pubblicità, che attivano meccanismi di monitoraggio **capaci di seguire il comportamento degli utenti online**. Non sono installati solo nelle app — li trovi nei browser, nelle smart TV, nelle Alexa, ovunque.
 
-Nelle app li trovi sotto forma di SDK: Facebook Pixel, Google Firebase, AppsFlyer. Monitorano azioni specifiche — acquisti, clic, navigazione — e forniscono alle piattaforme tutti i dettagli sul comportamento dell'utente, **anche al di fuori dei confini dell'app stessa**.
+Nelle app li trovi sotto forma di SDK: Facebook Pixel, Google Firebase, AppsFlyer. Monitorano azioni specifiche — acquisti, click, navigazione — e forniscono alle piattaforme tutti i dettagli sul comportamento dell'utente, **anche al di fuori dei confini dell'app stessa**.
 
 Ho già sentito la frase: _"vabbè ma che fa, mica ci rubano qualcosa?"_
 
-Ognuno può pensarla come vuole. Ma è giusto sapere che i nostri dati valgono oro — per noi, e soprattutto per le aziende che li comprano e li rivendono.
+Ognuno può pensarla come vuole. Ma è giusto sapere che i nostri dati valgono oro — per noi, e soprattutto per le aziende di data broker e advertiser.
 
 ---
 
@@ -86,9 +86,9 @@ Ognuno può pensarla come vuole. Ma è giusto sapere che i nostri dati valgono o
 
 **Annunci personalizzati** — hanno i dati, sanno cosa ci piace e cosa no. Quindi ci arrivano pubblicità solo di prodotti per cani, se amiamo i cani. E solo di una determinata marca, se quella marca paga di più.
 
-**Profilazione e segmentazione** — creano gruppi di utenti in base a interessi, comportamenti e dati demografici, alimentando strategie di marketing sempre più sofisticate.
+**Profilazione e segmentazione** — creano cluster (gruppi) di utenti in base a interessi, comportamenti e dati demografici, alimentando strategie di marketing sempre più sofisticate.
 
-**Tracciamento tra dispositivi diversi** — l'utilizzo di tecniche come l'impronta digitale del dispositivo e i traccianti nelle app permette di continuare a seguire l'utente anche quando passa da un dispositivo all'altro, oppure quando naviga tra sito e telefono.
+**Tracciamento multi-dispositivo** — l'utilizzo di tecniche come il fingerprinting e gli app tracker permette di continuare a seguire l'utente anche quando passa da un dispositivo all'altro, oppure quando naviga tra web e mobile.
 
 **Controllo e sorveglianza** — in alcuni casi, i dati raccolti vengono usati anche da governi e agenzie di intelligence per fini di sicurezza nazionale o investigazione.
 
@@ -96,17 +96,17 @@ Ognuno può pensarla come vuole. Ma è giusto sapere che i nostri dati valgono o
 
 ## Quindi la mia app Bring! come è messa?
 
-Piccolo promemoria: l'applicazione serve a fare la **lista della spesa**.
+Piccolo reminder: l'applicazione serve a fare la **lista della spesa**.
 
 State pensando a quello che penso io? Sì. Se quest'app ha dei traccianti, sanno cosa compriamo.
 
 Ebbene sì — ne contiene **6**:
 
-- **AppsFlyer**, azienda israeliana, utilizzata per monitorare, analizzare e ottimizzare le prestazioni delle campagne di marketing per le app.
+- **AppsFlyer**, azienda israeliana, utilizzata per monitorare, analizzare e ottimizzare le prestazioni delle campagne di marketing per app mobile.
 - **Facebook Analytics** (lo troveremo ovunque, anche nella carta igienica :)), serve per creare campagne pubblicitarie.
 - **Facebook Login**: ti permette di accedere all'app tramite il tuo account Facebook, così sapranno ancora più cose di te, anche che fai post contro Salvini :)
 - **Facebook Share**: perché mai dovrei condividere le mie liste della spesa su Facebook?
-- **Google Crashlytics**: in pratica serve a segnalare blocchi dell'app o malfunzionamenti, ma se uno si prende la briga di leggersi la documentazione, scopre che fa anche altro...
+- **Google Crashlytics**: in pratica serve a segnalare crash dell'app o malfunzionamenti, ma se uno si prende la briga di leggersi la documentazione, scopre che fa anche altro...
 - **Google Firebase Analytics**: se quello di Facebook lo troveremo anche sulla carta igienica, questo lo troveremo anche se ci facciamo le analisi del sangue. Cosa fa? Troppe cose per elencarle tutte.
 
 <div class="callout warning">
