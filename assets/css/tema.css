@@ -1,122 +1,35 @@
-/* Tempa — correzioni di tema e leggibilità */
-
-html[data-theme="dark"] {
-  --page-col: #16191b;
-  --text-col: #e9e8e3;
-  --link-col: #ec7a66;
-  --hover-col: #f3a394;
-  --navbar-col: #16191b;
-  --navbar-text-col: #e9e8e3;
-  --navbar-border-col: #2f3336;
-  --footer-col: #16191b;
-  --footer-text-col: #a6aaa7;
-  --footer-link-col: #ec7a66;
-  --footer-hover-col: #f3a394;
-  --mid-col: #a6aaa7;
-
-  --tempa-bg: #16191b;
-  --tempa-surface: #1e2225;
-  --tempa-surface-strong: #262b2e;
-  --tempa-text: #e9e8e3;
-  --tempa-muted: #a6aaa7;
-  --tempa-border: #2f3336;
-  --tempa-accent: #ec7a66;
-  --tempa-warning: #e8b65a;
-  --tempa-danger: #f08a80;
-  --tempa-success: #6fc39a;
-  --tempa-info: #7fb0d8;
-
-  --collina: #3d4245;
-  --superficie: #1e2225;
+/* Menu: allineato al contenuto, senza tagli */
+body {
+  overflow-x: hidden;
 }
 
-html[data-theme="dark"] body {
-  background-color: var(--page-col);
-  color: var(--text-col);
+.navbar-custom {
+  padding-left: 0;
+  padding-right: 0;
 }
 
-html[data-theme="dark"] .stat-card,
-html[data-theme="dark"] .stat-hero,
-html[data-theme="dark"] .timeline-item,
-html[data-theme="dark"] .callout {
-  background: var(--tempa-surface);
-  border-color: var(--tempa-border);
+.navbar-custom .navbar-collapse {
+  width: 100%;
+  max-width: 100%;
+  margin: 0;
+  padding: 0 15px;
+  flex-wrap: wrap;
+  column-gap: 0.5rem;
 }
 
-html[data-theme="dark"] .timeline::before {
-  background: var(--tempa-border);
+.navbar-custom .navbar-nav {
+  flex: 1 1 auto;
+  min-width: 0;
+  margin-right: 0 !important;
 }
 
-html[data-theme="dark"] .timeline-item::before {
-  background: var(--tempa-bg);
+.navbar-custom .navbar-nav .nav-link {
+  padding-right: 0.9rem;
+  white-space: nowrap;
 }
 
-html[data-theme="dark"] .pull-quote {
-  border-color: var(--tempa-text);
-}
-
-html[data-theme="dark"] .stat-label,
-html[data-theme="dark"] .timeline-date {
-  color: var(--tempa-muted);
-}
-
-html[data-theme="dark"] .post-container th {
-  background: var(--tempa-surface-strong);
-}
-
-html[data-theme="dark"] .post-container th,
-html[data-theme="dark"] .post-container td {
-  border-color: var(--tempa-border);
-}
-
-html[data-theme="dark"] pre,
-html[data-theme="dark"] code,
-html[data-theme="dark"] blockquote {
-  background-color: var(--tempa-surface);
-  color: var(--tempa-text);
-  border-color: var(--tempa-border);
-}
-
-/* Link sempre riconoscibili, anche senza distinguere i colori */
-.post-container a,
-.blog-post a {
-  text-decoration: underline;
-  text-decoration-thickness: 1px;
-  text-underline-offset: 3px;
-}
-
-a:focus-visible,
-button:focus-visible {
-  outline: 2px solid var(--link-col);
-  outline-offset: 2px;
-}
-
-/* Pulsante del tema */
 .theme-toggle {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 38px;
-  height: 38px;
-  padding: 0;
-  margin: 0.3rem 0 0.3rem 0.3rem;
-  font-size: 1.1rem;
-  line-height: 1;
-  color: var(--navbar-text-col);
-  background: transparent;
-  border: 1px solid var(--navbar-border-col);
-  border-radius: 8px;
-  cursor: pointer;
-}
-
-.theme-toggle .icon-sun {
-  display: none;
-}
-
-html[data-theme="dark"] .theme-toggle .icon-moon {
-  display: none;
-}
-
-html[data-theme="dark"] .theme-toggle .icon-sun {
-  display: inline;
+  flex: 0 0 auto;
+  margin-left: auto;
+  margin-right: 0;
 }
