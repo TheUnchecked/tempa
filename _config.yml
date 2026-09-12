@@ -11,12 +11,13 @@ favicon: "/favicon.ico"
 
 # --- Informazioni principali ---
 title: Tempa
-description: "Pensieri controvento."
+description: "Pensieri controvento"
 author: Dino
 language: it
 
 # --- Menu ---
 navbar-links:
+  Articoli: "/"
   Etichette: "tags"
   Grafo: "grafo"
   Chi sono: "aboutme"
