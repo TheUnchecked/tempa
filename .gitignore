@@ -3,6 +3,11 @@ _site
 .sass-cache
 .vagrant
 
+# skill locali per Claude Code (non fanno parte del progetto)
+/.agents/
+/.claude/
+/skills-lock.json
+
 # general
 .DS_Store
 Thumbs.db
