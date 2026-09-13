@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tempa — generatore di articoli</title>
+<style>
+  :root {
+    --bg: #fbfbf9;
+    --ink: #1f2326;
+    --sec: #5c605f;
+    --acc: #a3261b;
+    --line: #dcdbd5;
+    --sup: #f0f0ec;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #16191b;
+      --ink: #e9e8e3;
+      --sec: #a6aaa7;
+      --acc: #ec7a66;
+      --line: #2f3336;
+      --sup: #1e2225;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    padding: 16px 14px 60px;
+    background: var(--bg);
+    color: var(--ink);
+    font: 16px/1.5 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  }
+  h1 { font-size: 1.4rem; margin: 0 0 2px; }
+  .sub { color: var(--sec); font-size: 0.9rem; margin: 0 0 22px; }
+  h2 {
+    font-size: 0.82rem;
+    letter-spacing: 0.04em;
+    color: var(--sec);
+    margin: 26px 0 10px;
+    font-weight: 600;
+  }
+  label { display: block; font-size: 0.85rem; color: var(--sec); margin: 12px 0 4px; }
+  input, textarea, select {
+    width: 100%;
+    padding: 10px 11px;
+    font: inherit;
+    color: var(--ink);
+    background: var(--bg);
+    border: 1px solid var(--line);
+    border-radius: 8px;
+  }
+  textarea { min-height: 220px; resize: vertical; line-height: 1.55; }
+  #uscita { min-height: 260px; font-family: ui-monospace, Menlo, Consolas, monospace; font-size: 0.82rem; background: var(--sup); }
+  input:focus, textarea:focus, select:focus { outline: 2px solid var(--acc); outline-offset: 1px; border-color: var(--acc); }
+  .riga { display: flex; gap: 10px; }
+  .riga > * { flex: 1; min-width: 0; }
+  .attrezzi { display: flex; flex-wrap: wrap; gap: 6px; margin: 10px 0 4px; }
+  .attrezzi button {
+    flex: 0 0 auto;
+    padding: 7px 11px;
+    font: inherit;
+    font-size: 0.82rem;
+    color: var(--ink);
+    background: var(--sup);
+    border: 1px solid var(--line);
+    border-radius: 20px;
+    cursor: pointer;
+  }
+  .attrezzi button:active { background: var(--line); }
+  .principale {
+    width: 100%;
+    margin-top: 14px;
+    padding: 14px;
+    font: inherit;
+    font-weight: 600;
+    color: #fff;
+    background: var(--acc);
+    border: 0;
+    border-radius: 8px;
+    cursor: pointer;
+  }
+  .secondario {
+    width: 100%;
+    margin-top: 8px;
+    padding: 12px;
+    font: inherit;
+    color: var(--ink);
+    background: transparent;
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    cursor: pointer;
+  }
+  .nomefile {
+    margin: 14px 0 0;
+    padding: 11px 12px;
+    background: var(--sup);
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    font-family: ui-monospace, Menlo, Consolas, monospace;
+    font-size: 0.82rem;
+    word-break: break-all;
+  }
+  .nota { font-size: 0.82rem; color: var(--sec); margin: 8px 0 0; }
+  .avvisi { margin: 12px 0 0; padding: 0; list-style: none; font-size: 0.85rem; }
+  .avvisi li { padding: 8px 11px; border-left: 3px solid var(--acc); background: var(--sup); margin-bottom: 6px; border-radius: 0 6px 6px 0; }
+  hr { border: 0; border-top: 1px solid var(--line); margin: 28px 0 0; }
+</style>
+</head>
+<body>
+
+<h1>Generatore di articoli</h1>
+<p class="sub">Scrivi normalmente, i componenti si inseriscono con i pulsanti. Alla fine copi il file pronto per <code>_posts</code>.</p>
+
+<h2>INTESTAZIONE</h2>
+
+<label for="titolo">Titolo (senza punto finale)</label>
+<input id="titolo" type="text" placeholder="Come ci spiano attraverso le app">
+
+<label for="sottotitolo">Sottotitolo</label>
+<input id="sottotitolo" type="text" placeholder="Una frase che dice di cosa parla l'articolo.">
+
+<label for="estratto">Estratto (compare nell'elenco della pagina principale)</label>
+<input id="estratto" type="text" placeholder="Una o due frasi.">
+
+<div class="riga">
+  <div>
+    <label for="data">Data</label>
+    <input id="data" type="date">
+  </div>
+  <div>
+    <label for="immagine">Immagine (facoltativa)</label>
+    <input id="immagine" type="text" placeholder="nome-file.jpg">
+  </div>
+</div>
+
+<label for="etichette">Etichette, separate da virgola</label>
+<input id="etichette" type="text" placeholder="privacy, app, sicurezza digitale">
+
+<h2>TESTO</h2>
+
+<div class="attrezzi">
+  <button type="button" data-blocco="titoletto">Sottotitolo</button>
+  <button type="button" data-blocco="schede">Schede</button>
+  <button type="button" data-blocco="numero">Numero singolo</button>
+  <button type="button" data-blocco="riquadro">Riquadro</button>
+  <button type="button" data-blocco="cronologia">Cronologia</button>
+  <button type="button" data-blocco="frase">Frase in evidenza</button>
+  <button type="button" data-blocco="tabella">Tabella</button>
+  <button type="button" data-blocco="separatore">Separatore</button>
+  <button type="button" data-blocco="fonti">Fonti</button>
+</div>
+
+<textarea id="corpo" placeholder="Primo paragrafo. Attacca forte, senza introduzioni."></textarea>
+<p class="nota">Il testo si scrive in Markdown: **grassetto**, _corsivo_, [collegamento](https://esempio.it), elenchi con il trattino.</p>
+
+<button class="principale" id="genera">Genera il file</button>
+
+<hr>
+
+<h2>RISULTATO</h2>
+<p class="nomefile" id="nomefile">Il nome del file comparirà qui.</p>
+<ul class="avvisi" id="avvisi"></ul>
+<textarea id="uscita" readonly placeholder="Qui comparirà il file completo."></textarea>
+<button class="secondario" id="copia">Copia tutto</button>
+<p class="nota">Poi: app GitHub → <code>_posts</code> → “+” → Create new file → incolla il nome del file e il contenuto → Commit changes.</p>
+
+<script>
+(function () {
+  var corpo = document.getElementById('corpo');
+
+  var blocchi = {
+    titoletto: '\n## Sottotitolo della sezione\n\n',
+
+    schede:
+      '\n<div class="stat-row">\n' +
+      '  <div class="stat-card accent-red">\n' +
+      '    <div class="stat-number">95%</div>\n' +
+      '    <div class="stat-label">Descrizione breve</div>\n' +
+      '  </div>\n' +
+      '  <div class="stat-card accent-amber">\n' +
+      '    <div class="stat-number">93</div>\n' +
+      '    <div class="stat-label">Descrizione breve</div>\n' +
+      '  </div>\n' +
+      '  <div class="stat-card">\n' +
+      '    <div class="stat-number">41</div>\n' +
+      '    <div class="stat-label">Descrizione breve</div>\n' +
+      '  </div>\n' +
+      '</div>\n\n',
+
+    numero:
+      '\n<div class="stat-hero">\n' +
+      '  <div class="stat-number">375 milioni</div>\n' +
+      '  <div class="stat-label">Descrizione breve</div>\n' +
+      '</div>\n\n',
+
+    riquadro:
+      '\n<div class="callout warning">\n' +
+      '  <strong>Titolo del riquadro</strong>\n' +
+      '  Il testo, in una o due frasi.\n' +
+      '</div>\n\n',
+
+    cronologia:
+      '\n<div class="timeline">\n' +
+      '  <div class="timeline-item active">\n' +
+      '    <div class="timeline-date">Passo 1</div>\n' +
+      '    <div class="timeline-title">Cosa succede</div>\n' +
+      '    <div class="timeline-body">Spiegazione in una riga.</div>\n' +
+      '  </div>\n' +
+      '  <div class="timeline-item warning">\n' +
+      '    <div class="timeline-date">Passo 2</div>\n' +
+      '    <div class="timeline-title">Cosa succede</div>\n' +
+      '    <div class="timeline-body">Spiegazione in una riga.</div>\n' +
+      '  </div>\n' +
+      '</div>\n\n',
+
+    frase:
+      '\n<div class="pull-quote">\n' +
+      '  <p>"La frase che vuoi far restare in testa."</p>\n' +
+      '</div>\n\n',
+
+    tabella:
+      '\n| Voce | Valore | Note |\n' +
+      '|---|---|---|\n' +
+      '| Prima | 10 | Descrizione |\n' +
+      '| Seconda | 20 | Descrizione |\n\n',
+
+    separatore: '\n---\n\n',
+
+    fonti:
+      '\n## Fonti\n\n' +
+      '- **Nome della fonte** — descrizione breve, [indirizzo](https://esempio.it)\n' +
+      '- **Nome della fonte** — descrizione breve, [indirizzo](https://esempio.it)\n' +
+      '{: .fonti}\n'
+  };
+
+  Array.prototype.forEach.call(document.querySelectorAll('.attrezzi button'), function (b) {
+    b.addEventListener('click', function () {
+      var testo = blocchi[b.dataset.blocco];
+      var i = corpo.selectionStart;
+      var j = corpo.selectionEnd;
+      corpo.value = corpo.value.slice(0, i) + testo + corpo.value.slice(j);
+      corpo.focus();
+      corpo.selectionStart = corpo.selectionEnd = i + testo.length;
+    });
+  });
+
+  function oggi() {
+    var d = new Date();
+    var m = String(d.getMonth() + 1).padStart(2, '0');
+    var g = String(d.getDate()).padStart(2, '0');
+    return d.getFullYear() + '-' + m + '-' + g;
+  }
+  document.getElementById('data').value = oggi();
+
+  function scorciatoia(t) {
+    return t
+      .toLowerCase()
+      .normalize('NFD').replace(/[\u0300-\u036f]/g, '')
+      .replace(/['’"]/g, '')
+      .replace(/[^a-z0-9]+/g, '-')
+      .replace(/^-+|-+$/g, '')
+      .slice(0, 60);
+  }
+
+  function pulisci(t) {
+    t = t.replace(/\r\n/g, '\n');
+    // Trattini lunghi persi durante copia e incolla
+    t = t.replace(/(\S) {2,}(?=\S)/g, '$1 — ');
+    // Righe di tabella finite sulla stessa riga
+    t = t.replace(/\|\|/g, '|\n|');
+    // Riga vuota prima di titoli, separatori e blocchi
+    t = t.replace(/([^\n])\n(## )/g, '$1\n\n$2');
+    t = t.replace(/([^\n])\n(<div)/g, '$1\n\n$2');
+    t = t.replace(/([^\n])\n(---[ \t]*\n)/g, '$1\n\n$2');
+    // Riga vuota dopo la chiusura di un blocco
+    t = t.replace(/(<\/div>)\n(?!\n)/g, '$1\n\n');
+    // Riga vuota prima e dopo una tabella
+    t = t.replace(/([^\n|])\n(\|)/g, '$1\n\n$2');
+    t = t.replace(/(\|[ \t]*)\n(?!\n|\|)/g, '$1\n\n');
+    t = t.replace(/\n{3,}/g, '\n\n');
+    return t.trim();
+  }
+
+  function virgolette(t) {
+    return String(t).replace(/"/g, '\\"').trim();
+  }
+
+  document.getElementById('genera').addEventListener('click', function () {
+    var titolo = document.getElementById('titolo').value.trim().replace(/[.]+$/, '');
+    var sottotitolo = document.getElementById('sottotitolo').value.trim();
+    var estratto = document.getElementById('estratto').value.trim();
+    var immagine = document.getElementById('immagine').value.trim();
+    var data = document.getElementById('data').value || oggi();
+
+    var etichette = document.getElementById('etichette').value
+      .split(',')
+      .map(function (e) { return e.trim().toLowerCase(); })
+      .filter(function (e, i, a) { return e && a.indexOf(e) === i; });
+
+    var testo = pulisci(corpo.value);
+
+    var avvisi = [];
+    if (!titolo) { avvisi.push('Manca il titolo.'); }
+    if (!estratto) { avvisi.push('Manca l’estratto: nell’elenco comparirà il primo paragrafo, che spesso non funziona.'); }
+    if (!etichette.length) { avvisi.push('Nessuna etichetta: l’articolo non comparirà nell’indice.'); }
+    if (!testo) { avvisi.push('Il testo è vuoto.'); }
+    if (/\b(AI|IA)\b/.test(testo) && /\bAI\b/.test(testo) && /\bIA\b/.test(testo)) {
+      avvisi.push('Nel testo compaiono sia “AI” sia “IA”: scegline una.');
+    }
+
+    var lista = document.getElementById('avvisi');
+    lista.innerHTML = '';
+    avvisi.forEach(function (a) {
+      var li = document.createElement('li');
+      li.textContent = a;
+      lista.appendChild(li);
+    });
+
+    var testa = ['---', 'layout: post'];
+    testa.push('title: "' + virgolette(titolo) + '"');
+    if (sottotitolo) { testa.push('subtitle: "' + virgolette(sottotitolo) + '"'); }
+    if (estratto) { testa.push('excerpt: "' + virgolette(estratto) + '"'); }
+    if (etichette.length) { testa.push('tags: [' + etichette.join(', ') + ']'); }
+    if (immagine) {
+      var perc = immagine.charAt(0) === '/' ? immagine : '/assets/img/' + immagine;
+      testa.push('share-img: ' + perc);
+    }
+    testa.push('---');
+
+    document.getElementById('uscita').value = testa.join('\n') + '\n\n' + testo + '\n';
+    document.getElementById('nomefile').textContent =
+      data + '-' + (scorciatoia(titolo) || 'senza-titolo') + '.md';
+  });
+
+  document.getElementById('copia').addEventListener('click', function () {
+    var u = document.getElementById('uscita');
+    if (!u.value) { return; }
+    u.removeAttribute('readonly');
+    u.select();
+    u.setSelectionRange(0, 999999);
+    try {
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(u.value);
+      } else {
+        document.execCommand('copy');
+      }
+      this.textContent = 'Copiato';
+    } catch (e) {
+      this.textContent = 'Copia a mano: il testo è selezionato';
+    }
+    u.setAttribute('readonly', 'readonly');
+    var b = this;
+    setTimeout(function () { b.textContent = 'Copia tutto'; }, 2000);
+  });
+})();
+</script>
+
+</body>
+</html>
